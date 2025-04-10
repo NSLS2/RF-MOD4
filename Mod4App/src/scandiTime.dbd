@@ -1,0 +1,3 @@
+variable(scandiTSDebug)
+function(scandiTsubInit)
+function(scandiTsubProcess)

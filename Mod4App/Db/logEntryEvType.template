@@ -1,0 +1,40 @@
+record(calcout,  "$(SYS1){$(DEV1)}$(RN)IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "$(N)")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}$(RN)-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}$(RN)-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}$(IN)")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}$(RT)-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}$(RT)-Calc") {
+  field(DESC,    "Calcuate INDX field for TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}$(RN)-SubA" )
+  field(INPB,    "$(OFS)")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}$(RT)-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}$(RT)-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}$(TXTIN)")    
+  field(FTVL,    "STRING")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}$(RT)-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}$(RT)-I")
+{    
+  field(DESC,    "Log entry $(N) text:")
+  field(INP,     "$(SYS1){$(DEV1)}$(RT)-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}$(NXT)")
+}
+

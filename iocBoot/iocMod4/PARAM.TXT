@@ -1,0 +1,37 @@
+Hlim
+WHlim
+WLlim
+Llim
+Filter
+uiScaleU
+uiScaleL
+rScaleU
+rScaleL
+Set
+Set1
+Set2
+Invalid Set
+Invalid Set1
+Invalid Set2
+RampTime
+OkDly
+RampTime1
+RampTime2
+OkDly1
+OkDly2
+RampStartSet
+Invalid RampStartSet
+RampOn
+TargetMatrix updated
+Hardware config saved
+CvdArcTripSet
+CtArcTripSet
+CtIntegrateTripSet
+CtIntegrateDelay
+CtIntegrateSamples
+TrafoResistance
+MaxDownTime
+DownTimeFactor
+PulsesPerLiter
+AngleSet
+Attenuation

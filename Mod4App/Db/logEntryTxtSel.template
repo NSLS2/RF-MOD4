@@ -1,0 +1,22 @@
+record(scalcout,  "$(SYS1){$(DEV1)}$(RT)-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}$(SLN)")
+  field(INAA,     "$(SYS1){$(DEV1)}$(AA)-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}$(BB)-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}$(CC)-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}$(FF)-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}$(RT)-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}$(RT)-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}$(NXT)")
+}

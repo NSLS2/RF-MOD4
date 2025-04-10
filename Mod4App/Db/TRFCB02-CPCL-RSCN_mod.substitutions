@@ -1,0 +1,144 @@
+file mb_ai_int16.template {
+    pattern
+    {SYS      DEV1     DEV2    REC                 DESC              EGU     INP                OFFSET  TYPE HOPR    LOPR    PREC    SCAN}
+    {\$(SYS1) \$(DEV1) ""      ID:MB               "Modbus  ID:"     ""      INP_MB_ID          0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      ID:REV              "Modbus REV:"     ""      INP_MB_REV         0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Cnt:WD-I_           "Watchdog IN:"    ""      INP_TcpWatchdog    0       16   1000    0       0       ".2 second"}
+    {\$(SYS1) \$(DEV1) ""      State-Sts           "State"           ""      INP_State          0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      State-RB            "Target State"    ""      INP_TargetState    0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Sts:I               "Status"          ""      INP_StatusBits     0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      OpMode-Sts          "AccessLevel:"    ""      INP_AccessLevel    0       16   1000    0       0       "1 second"}
+
+    {\$(SYS1) \$(DEV1) "-PS:1" DI:IL-Sts           "Ccps\\Ps1SumSts" ""      INP_CCPS1ILRead    0       16   1000    0       0       "1 second"}
+#   {\$(SYS1) \$(DEV1) "-PS:2" DI:IL-Sts           "Ccps\\Ps2SumSts" ""      INP_CCPS2ILRead    0       16   1000    0       0       "1 second"}
+
+    {\$(SYS1) \$(DEV1) ""      Evt:LogIX-I         "EventsIndex"     ""      INP_EventsIndex    0       16     50    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Evt:Incr-I          "EventsIncr"      ""      INP_EventsIncr     0       16     50    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Evt:Type-I          "EventsType"      ""      INP_EventsType     0       16     50    0       0       "1 second"}
+
+    {\$(SYS1) \$(DEV1) ""      Evt:IX-I            "Ev. IX Ary"      ""      INP_LOG_EventIndex 0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Evt:Txt-I           "EventsTxtNo"     ""      INP_LOG_TextIndex  0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Evt:Typ-I           "EventsDataType"  ""      INP_LOG_DataType   0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Evt:StartIX-I       "EventsTextNo"    ""      INP_LOG_StartIndex 0       16   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) "-Dig"  Cnt:Wf-I            "CustSeq"         ""      INP_SN             0       16   1000    0       0       "1 second"}
+    }
+
+
+file mb_ai_float32.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                     OFFSET TYPE  HIGH   HIHI    LOW   LOLO  HOPR    LOPR    PREC    SCAN        DEV3      FLK}
+    {\$(SYS1) \$(DEV1) ""      Freq:Prf-I     "T&i\\\\PrfRead"      "Hz"    INP_PulseRepFreq         0     32       5     10     -1     -1  2000    0       1       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) ""      Time:State-I   "State ready time:"   "s"     INP_SlowKlyTimeRemaining 0     32    1800   3600     -1     -1  2000    0       1       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-CCPS" E:I            "Ccps\\\\VoltSet"     "V"     INP_VoltSet              0     32    1500   1800     -1     -1  2000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-Fil"  I:I            "Kly\\\\FpsCurrSet1"  "A"     INP_CurrentSet           0     32      20     25     -1     -1  2000    0       2       "1 second"  ""        Val:Dmy-Calc}
+
+#   {\$(SYS1) \$(DEV1) ""      Pwr:Fwd-I      "RfOutFwd"            "dBm"   INP_IFBFwdRead           0     32      25     30     -1     -1  2000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) ""      Pwr:Rev-I      "RfOutRfl"            "dBm"   INP_IFBRefRead           0     32      25     30     -1     -1  2000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) ""      Time:RfFwhm-I  "RfOutFWHM"           "us"    INP_RfOutFwhmRead        0     32   6E-06  7E-06     -1     -1  2000    0       2       "1 second"  ""        Val:Dmy-Calc}
+
+    {\$(SYS1) \$(DEV1) ""      Time:PW-I      "Pulse Width"         "us"    INP_PulseWidth           0     32       6     10     -1     -1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-PS:1" E:I            "Ps1VoltRead"         "V"     INP_CCPS1VoltRead        0     32    1200   1500      0      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-PS:2" E:I            "Ps2VoltRead"         "V"     INP_CCPS2VoltRead        0     32    1200   1500      0      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-PS:5" E:I            "Ps5VoltRead"         "V"     INP_CCPS5VoltRead        0     32    1200   1500      0      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-FPS"  I:I            "Kly\\FpsCurrRead"    "A"     INP_FastFilPsCurrRead    0     32      20     25      0      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-FPS"  E:I            "Kly\\FpsVoltRead"    "V"     INP_FastFilPsVoltRead    0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-IP:1" I:I            "Ipc1CurrRead"        "A"     INP_IonPsMonRead         0     32   2E-07  7E-07  1E-10  1E-11  1E-6    0       2       "1 second"  "-IP:1"   Flt:KlyVac-Calc}
+    {\$(SYS1) \$(DEV1) "-IP:1" E:I            "Ipc1VoltRead"        "V"     INP_IonPsVoltRead        0     32    10E3   15E3  3.2E3  3.1E3  15E3    0       1       "1 second"  "-IP:1"   Flt:KlyVac-Calc}
+    {\$(SYS1) \$(DEV1) "-IP:1" P:I            "Ipc1PressureRead"    "Torr"  INP_IonPsPressureRead    0     32 1.0E-08  2E-08  1E-12  1E-13  1E-6    0       2       "1 second"  "-IP:1"   Flt:KlyVac-Calc}
+
+    {\$(SYS1) \$(DEV1) "-SPS:1" I:I           "SPS1Current"         "A"     INP_SPS1CurrRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:1" E:I           "SPS1Voltage"         "V"     INP_SPS1VoltRead         0     32      10     15      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:2" I:I           "SPS2Current"         "A"     INP_SPS2CurrRead         0     32      30     35      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:2" E:I           "SPS2Voltage"         "V"     INP_SPS2VoltRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:3" I:I           "SPS3Current"         "A"     INP_SPS3CurrRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:3" E:I           "SPS3Voltage"         "V"     INP_SPS3VoltRead         0     32      25     27      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:4" I:I           "SPS4Current"         "A"     INP_SPS4CurrRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:4" E:I           "SPS4Voltage"         "V"     INP_SPS4VoltRead         0     32      25     30      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:5" I:I           "SPS5Current"         "A"     INP_SPS5CurrRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:5" E:I           "SPS5Voltage"         "V"     INP_SPS5VoltRead         0     32      20     25      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:6" I:I           "SPS6Current"         "A"     INP_SPS6CurrRead         0     32      10     15      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-SPS:6" E:I           "SPS6Voltage"         "V"     INP_SPS6VoltRead         0     32       5      6      2      1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+
+    {\$(SYS1) \$(DEV1) "-CT"   I:I            "Tank\\\\DigiCt"      "A"     INP_IFBCtRead            0     32     400    500     10      1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-CVD"  E:I            "Tank\\\\DigiCvd"     "kV"    INP_IFBCvdRead           0     32     310    400     10      1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) ""      Time:Fwhm-I    "Tank\\\\DigiFwhm"    "us"    INP_IFBFwhmRead          0     32       6     10      1    0.1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Oil"  T:I            "OilTempRead"         "C"     INP_IFBOilTemperature    0     32      35     40     20     15  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Oil"  L:I            "OilLevRead"          "mm"    INP_IFBOilLevel          0     32       0      1    -30    -50  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-Oil"  RH:I           "OilHumRead"          "ppm"   INP_IFBOilHumidity       0     32      90    100      0     -1  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Coll" T:Fwd-I        "CollFwdTempRead"     "C"     INP_IFBCollInletTemp     0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Coll" T:Rtn-I        "Cool\\\\CollRtnTemp" "C"     INP_IFBCollOutletTemp    0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Bdy"  T:Fwd-I        "BodyFwdTempRead"     "C"     INP_IFBBodyInletTemp     0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Bdy"  T:Rtn-I        "BodyRtnTempRead"     "C"     INP_IFBBodyOutletTemp    0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-Bdy"  T:I            "Body T:"             "C"     INP_IFBBodyTemp          0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+#   {\$(SYS1) \$(DEV1) "-Sol"  T:I            "Solenoid T:"         "C"     INP_IFBSolenoidTemp      0     32      50     55     25     20  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) ""      Val:Logf-I     "LOG val float"       ""      INP_LOG_DataValueFloat   0     32    1000  10000      1      0  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+
+    {\$(SYS1) \$(DEV1) "-CCPS" F:1-I          "CcpsSuFlow1"         "l/m"   INP_IFB_Flow1            0     32      15     20     5       2  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-CCPS" F:2-I          "CcpsSuFlow2"         "l/m"   INP_IFB_Flow2            0     32      15     20     5       2  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-CCPS" F:3-I          "CcpsSuFlow3"         "l/m"   INP_IFB_Flow3            0     32      15     20     5       2  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Win"  F:I            "WinFlow"             "l/m"   INP_IFB_Flow4            0     32      15     20     5       2  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Sol"  F:I            "SolFlow"             "l/m"   INP_IFB_Flow5            0     32      20     25    10       5  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Bdy"  F:I            "BodCollFlow"         "l/m"   INP_IFB_Flow6            0     32      45     50    10       5  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    {\$(SYS1) \$(DEV1) "-Bdy"  Pwr:Loss-I     "FlowPwrBdy"          "kW"    INP_IFBBdyPwrLoss        0     32     100    120    -1      -2  1000    0       2       "1 second"  ""        Val:Dmy-Calc}
+    }
+
+
+file mb_ai_int32.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                      OFFSET TYPE HOPR    LOPR    PREC    SCAN}
+    {\$(SYS1) \$(DEV1) ""      Cnt:Log-I     "LOG counter"          ""      INP_LOG_Counter          0      32   1000    0       0       "1 second"}
+    {\$(SYS1) \$(DEV1) ""      Val:Log32-I   "LOG val int32"        ""      INP_LOG_DataValueInt32   0      32   1000    0       0       "1 second"}
+    }
+
+file mb_wave_log_int16.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                      OFFSET SCAN        FLK}
+    {\$(SYS1) \$(DEV1) ""      Evt:IX-Wf      "Wf Log Evt IX"       "s"     INP_LOG_Wave_EventIndex  0      "1 second"  "ID:S00IX-Calc"  }
+    {\$(SYS1) \$(DEV1) ""      Evt:Txt-Wf     "Wf Log Txt IX"       "s"     INP_LOG_Wave_TextIndex   0      "1 second"  "ID:N00IX-Calc"  }
+    {\$(SYS1) \$(DEV1) ""      Evt:DTyp-Wf    "Wf Log Data Type"    "s"     INP_LOG_Wave_DataType    0      "1 second"  "Val:Dmy-SubA"   }
+    {\$(SYS1) \$(DEV1) ""      Cnt:LogInc-Wf  "Wf Log Incr."        "s"     INP_LOG_Wave_Increment   0      "1 second"  "Val:Dmy-SubA"   }
+    {\$(SYS1) \$(DEV1) ""      Evt:Typ-Wf     "Wf Log Event Type."  "s"     INP_LOG_Wave_EventType   0      "1 second"  "ID:IL00IX-Calc" }
+    }
+
+file mb_wave_matrix_int16.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                      OFFSET SCAN          K  FLK}
+    {\$(SYS1) \$(DEV1) ""      DI:Stat1-Wf    "Wf SSM State"        ""      INP_MX_Wave_Stat1        0      "1 second"    0  "State:SubA"  }
+    {\$(SYS1) \$(DEV1) ""      DI:Sts1-Wf     "Wf SSM Status"       ""      INP_MX_Wave_Sts1         0      "1 second"    0  "Sts:SubA"    }
+    {\$(SYS1) \$(DEV1) ""      DI:Stat2-Wf    "Wf SSM State"        ""      INP_MX_Wave_Stat2        0      "1 second"   64  "State:SubA"  }
+    {\$(SYS1) \$(DEV1) ""      DI:Sts2-Wf     "Wf SSM Status"       ""      INP_MX_Wave_Sts2         0      "1 second"   64  "Sts:SubA"    }
+    {\$(SYS1) \$(DEV1) ""      DI:Stat3-Wf    "Wf SSM State"        ""      INP_MX_Wave_Stat3        0      "1 second"  128  "State:SubA"  }
+    {\$(SYS1) \$(DEV1) ""      DI:Sts3-Wf     "Wf SSM Status"       ""      INP_MX_Wave_Sts3         0      "1 second"  128  "Sts:SubA"    }
+    {\$(SYS1) \$(DEV1) ""      DI:Stat4-Wf    "Wf SSM State"        ""      INP_MX_Wave_Stat4        0      "1 second"  192  "State:SubA"  }
+    {\$(SYS1) \$(DEV1) ""      DI:Sts4-Wf     "Wf SSM Status"       ""      INP_MX_Wave_Sts4         0      "1 second"  192  "Sts:SubA"    }
+    }
+
+file mb_wave_digi_int16.template {
+    pattern
+    {SYS      DEV1     DEV2    OFFSET WNO SCAN          G1   G2      O  FLK}
+    {\$(SYS1) \$(DEV1) ""      0      00  "1 second"    0.0   0      0  "DI:01-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      01  "Passive"   -20.0   0  36000  "DI:02-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      02  "Passive"     0.0   0      0  "DI:03-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      03  "Passive"     0.0   0      0  "DI:04-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      04  "Passive"     0.0   0      0  "DI:05-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      05  "Passive"     0.0   0      0  "DI:06-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      06  "Passive"     0.0   0      0  "DI:07-Wf"  }
+    {\$(SYS1) \$(DEV1) ""      0      07  "Passive"     0.0   0      0  "DI:08-Wf"  }
+    }
+
+
+file mb_wave_log_int32.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                      NLM OFFSET SCAN        FLK}
+    {\$(SYS1) \$(DEV1) ""      Evt:Log32-Wf  "Wf Log Int32 Data"    "s"     INP_LOG_Wave_DataInt32    50 0      "1 second"  "Val:Dmy-SubA" }
+    {\$(SYS1) \$(DEV1) ""      Evt:TrigID-Wf "Wf Log Trigger ID"    "s"     INP_LOG_Wave_TrigID       50 0      "1 second"  "Evt:TgID00IX-Calc" }
+    {\$(SYS1) \$(DEV1) ""      Time:TS1-Wf   "Wf 1 Log TS"          "s"     INP_LOG_Wave_Timestamp_1  50 0      "1 second"  "Time:TS-Calc" }
+    {\$(SYS1) \$(DEV1) ""      Time:TS2-Wf   "Wf 2 Log TS"          "s"     INP_LOG_Wave_Timestamp_2  50 0      "1 second"  "Time:TS-Calc" }
+    }
+
+file mb_wave_log_float.template {
+    pattern
+    {SYS      DEV1     DEV2    REC            DESC                  EGU     INP                     OFFSET PREC SCAN,       FLK}
+    {\$(SYS1) \$(DEV1) ""      Evt:Logf-Wf    "Wf Log Float Data"   ""     INP_LOG_Wave_DataFloat   0      2    "1 second"  Val:I00IX-Calc }
+    }
+

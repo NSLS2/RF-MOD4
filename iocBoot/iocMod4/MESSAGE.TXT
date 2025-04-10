@@ -1,0 +1,4 @@
+AccessLevel: Remote
+AccessLevel: Operator
+AccessLevel: Admin
+AccessLevel: ScandiNova

@@ -1,0 +1,2400 @@
+record(calcout,  "$(SYS1){$(DEV1)}ID:W00IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "0")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W00-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W00-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W00tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W00tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W00-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt00-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt00-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W00-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt00-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt00-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt00-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt00-I_")
+{    
+  field(DESC,    "Log entry 0 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt00-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W01IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W01IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "1")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W01-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W01-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W01tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W01tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W01-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt01-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt01-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W01-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt01-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt01-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt01-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt01-I_")
+{    
+  field(DESC,    "Log entry 1 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt01-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W02IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W02IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "2")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W02-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W02-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W02tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W02tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W02-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt02-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt02-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W02-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt02-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt02-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt02-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt02-I_")
+{    
+  field(DESC,    "Log entry 2 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt02-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W03IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W03IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "3")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W03-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W03-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W03tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W03tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W03-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt03-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt03-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W03-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt03-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt03-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt03-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt03-I_")
+{    
+  field(DESC,    "Log entry 3 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt03-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W04IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W04IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "4")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W04-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W04-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W04tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W04tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W04-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt04-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt04-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W04-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt04-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt04-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt04-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt04-I_")
+{    
+  field(DESC,    "Log entry 4 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt04-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W05IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W05IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "5")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W05-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W05-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W05tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W05tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W05-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt05-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt05-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W05-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt05-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt05-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt05-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt05-I_")
+{    
+  field(DESC,    "Log entry 5 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt05-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W06IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W06IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "6")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W06-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W06-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W06tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W06tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W06-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt06-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt06-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W06-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt06-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt06-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt06-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt06-I_")
+{    
+  field(DESC,    "Log entry 6 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt06-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W07IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W07IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "7")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W07-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W07-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W07tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W07tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W07-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt07-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt07-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W07-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt07-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt07-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt07-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt07-I_")
+{    
+  field(DESC,    "Log entry 7 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt07-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W08IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W08IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "8")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W08-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W08-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W08tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W08tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W08-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt08-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt08-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W08-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt08-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt08-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt08-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt08-I_")
+{    
+  field(DESC,    "Log entry 8 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt08-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W09IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W09IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "9")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W09-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W09-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W09tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W09tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W09-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt09-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt09-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W09-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt09-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt09-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt09-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt09-I_")
+{    
+  field(DESC,    "Log entry 9 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt09-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W10IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W10IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "10")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W10-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W10-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W10tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W10tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W10-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt10-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt10-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W10-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt10-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt10-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt10-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt10-I_")
+{    
+  field(DESC,    "Log entry 10 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt10-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W11IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W11IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "11")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W11-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W11-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W11tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W11tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W11-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt11-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt11-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W11-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt11-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt11-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt11-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt11-I_")
+{    
+  field(DESC,    "Log entry 11 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt11-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W12IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W12IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "12")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W12-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W12-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W12tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W12tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W12-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt12-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt12-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W12-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt12-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt12-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt12-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt12-I_")
+{    
+  field(DESC,    "Log entry 12 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt12-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W13IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W13IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "13")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W13-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W13-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W13tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W13tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W13-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt13-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt13-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W13-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt13-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt13-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt13-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt13-I_")
+{    
+  field(DESC,    "Log entry 13 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt13-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W14IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W14IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "14")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W14-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W14-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W14tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W14tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W14-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt14-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt14-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W14-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt14-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt14-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt14-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt14-I_")
+{    
+  field(DESC,    "Log entry 14 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt14-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W15IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W15IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "15")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W15-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W15-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W15tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W15tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W15-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt15-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt15-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W15-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt15-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt15-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt15-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt15-I_")
+{    
+  field(DESC,    "Log entry 15 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt15-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W16IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W16IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "16")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W16-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W16-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W16tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W16tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W16-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt16-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt16-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W16-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt16-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt16-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt16-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt16-I_")
+{    
+  field(DESC,    "Log entry 16 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt16-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W17IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W17IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "17")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W17-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W17-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W17tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W17tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W17-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt17-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt17-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W17-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt17-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt17-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt17-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt17-I_")
+{    
+  field(DESC,    "Log entry 17 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt17-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W18IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W18IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "18")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W18-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W18-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W18tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W18tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W18-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt18-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt18-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W18-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt18-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt18-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt18-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt18-I_")
+{    
+  field(DESC,    "Log entry 18 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt18-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W19IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W19IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "19")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W19-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W19-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W19tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W19tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W19-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt19-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt19-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W19-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt19-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt19-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt19-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt19-I_")
+{    
+  field(DESC,    "Log entry 19 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt19-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W20IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W20IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "20")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W20-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W20-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W20tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W20tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W20-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt20-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt20-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W20-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt20-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt20-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt20-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt20-I_")
+{    
+  field(DESC,    "Log entry 20 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt20-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W21IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W21IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "21")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W21-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W21-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W21tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W21tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W21-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt21-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt21-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W21-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt21-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt21-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt21-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt21-I_")
+{    
+  field(DESC,    "Log entry 21 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt21-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W22IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W22IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "22")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W22-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W22-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W22tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W22tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W22-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt22-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt22-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W22-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt22-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt22-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt22-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt22-I_")
+{    
+  field(DESC,    "Log entry 22 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt22-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W23IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W23IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "23")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W23-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W23-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W23tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W23tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W23-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt23-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt23-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W23-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt23-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt23-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt23-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt23-I_")
+{    
+  field(DESC,    "Log entry 23 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt23-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W24IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W24IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "24")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W24-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W24-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W24tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W24tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W24-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt24-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt24-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W24-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt24-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt24-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt24-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt24-I_")
+{    
+  field(DESC,    "Log entry 24 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt24-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W25IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W25IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "25")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W25-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W25-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W25tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W25tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W25-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt25-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt25-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W25-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt25-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt25-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt25-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt25-I_")
+{    
+  field(DESC,    "Log entry 25 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt25-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W26IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W26IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "26")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W26-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W26-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W26tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W26tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W26-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt26-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt26-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W26-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt26-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt26-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt26-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt26-I_")
+{    
+  field(DESC,    "Log entry 26 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt26-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W27IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W27IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "27")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W27-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W27-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W27tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W27tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W27-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt27-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt27-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W27-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt27-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt27-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt27-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt27-I_")
+{    
+  field(DESC,    "Log entry 27 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt27-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W28IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W28IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "28")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W28-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W28-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W28tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W28tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W28-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt28-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt28-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W28-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt28-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt28-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt28-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt28-I_")
+{    
+  field(DESC,    "Log entry 28 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt28-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W29IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W29IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "29")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W29-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W29-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W29tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W29tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W29-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt29-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt29-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W29-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt29-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt29-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt29-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt29-I_")
+{    
+  field(DESC,    "Log entry 29 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt29-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W30IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W30IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "30")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W30-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W30-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W30tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W30tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W30-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt30-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt30-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W30-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt30-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt30-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt30-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt30-I_")
+{    
+  field(DESC,    "Log entry 30 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt30-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W31IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W31IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "31")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W31-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W31-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W31tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W31tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W31-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt31-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt31-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W31-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt31-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt31-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt31-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt31-I_")
+{    
+  field(DESC,    "Log entry 31 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt31-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W32IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W32IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "32")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W32-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W32-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W32tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W32tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W32-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt32-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt32-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W32-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt32-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt32-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt32-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt32-I_")
+{    
+  field(DESC,    "Log entry 32 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt32-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W33IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W33IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "33")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W33-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W33-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W33tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W33tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W33-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt33-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt33-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W33-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt33-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt33-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt33-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt33-I_")
+{    
+  field(DESC,    "Log entry 33 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt33-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W34IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W34IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "34")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W34-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W34-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W34tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W34tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W34-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt34-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt34-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W34-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt34-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt34-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt34-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt34-I_")
+{    
+  field(DESC,    "Log entry 34 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt34-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W35IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W35IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "35")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W35-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W35-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W35tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W35tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W35-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt35-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt35-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W35-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt35-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt35-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt35-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt35-I_")
+{    
+  field(DESC,    "Log entry 35 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt35-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W36IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W36IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "36")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W36-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W36-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W36tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W36tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W36-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt36-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt36-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W36-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt36-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt36-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt36-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt36-I_")
+{    
+  field(DESC,    "Log entry 36 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt36-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W37IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W37IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "37")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W37-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W37-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W37tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W37tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W37-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt37-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt37-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W37-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt37-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt37-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt37-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt37-I_")
+{    
+  field(DESC,    "Log entry 37 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt37-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W38IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W38IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "38")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W38-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W38-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W38tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W38tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W38-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt38-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt38-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W38-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt38-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt38-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt38-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt38-I_")
+{    
+  field(DESC,    "Log entry 38 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt38-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W39IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W39IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "39")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W39-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W39-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W39tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W39tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W39-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt39-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt39-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W39-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt39-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt39-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt39-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt39-I_")
+{    
+  field(DESC,    "Log entry 39 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt39-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W40IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W40IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "40")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W40-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W40-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W40tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W40tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W40-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt40-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt40-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W40-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt40-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt40-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt40-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt40-I_")
+{    
+  field(DESC,    "Log entry 40 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt40-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W41IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W41IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "41")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W41-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W41-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W41tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W41tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W41-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt41-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt41-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W41-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt41-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt41-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt41-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt41-I_")
+{    
+  field(DESC,    "Log entry 41 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt41-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W42IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W42IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "42")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W42-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W42-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W42tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W42tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W42-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt42-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt42-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W42-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt42-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt42-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt42-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt42-I_")
+{    
+  field(DESC,    "Log entry 42 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt42-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W43IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W43IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "43")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W43-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W43-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W43tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W43tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W43-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt43-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt43-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W43-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt43-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt43-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt43-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt43-I_")
+{    
+  field(DESC,    "Log entry 43 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt43-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W44IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W44IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "44")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W44-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W44-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W44tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W44tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W44-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt44-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt44-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W44-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt44-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt44-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt44-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt44-I_")
+{    
+  field(DESC,    "Log entry 44 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt44-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W45IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W45IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "45")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W45-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W45-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W45tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W45tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W45-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt45-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt45-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W45-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt45-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt45-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt45-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt45-I_")
+{    
+  field(DESC,    "Log entry 45 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt45-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W46IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W46IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "46")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W46-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W46-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W46tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W46tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W46-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt46-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt46-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W46-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt46-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt46-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt46-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt46-I_")
+{    
+  field(DESC,    "Log entry 46 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt46-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W47IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W47IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "47")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W47-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W47-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W47tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W47tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W47-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt47-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt47-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W47-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt47-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt47-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt47-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt47-I_")
+{    
+  field(DESC,    "Log entry 47 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt47-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W48IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W48IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "48")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W48-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W48-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W48tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W48tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W48-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt48-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt48-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W48-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt48-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt48-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt48-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt48-I_")
+{    
+  field(DESC,    "Log entry 48 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt48-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W49IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:W49IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "49")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:W49-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:W49-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Txt-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W49tix-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}ID:W49tix-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:W49-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt49-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wt49-Calc") {
+  field(DESC,    "Calc. INDX field for Warn TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:W49-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:Wt49-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wt49-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")
+#
+# ID:Wrntxt-Wf 
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wt49-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wt49-I_")
+{    
+  field(DESC,    "Log entry 49 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wt49-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:M00IX-Calc")
+}
+

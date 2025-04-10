@@ -1,0 +1,3 @@
+Llim exceeded
+Hlim exceeded
+Input missing

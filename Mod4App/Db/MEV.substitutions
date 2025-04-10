@@ -1,0 +1,6 @@
+file MEV.template {
+    pattern
+    {SYS1      DEV1      DEV2      IN1          IN2          }
+    {\$(SYS1) \$(DEV1)   \-MEV     "Val:MEV-Wf" "Time:MEV-Wf" }
+    {\$(SYS1) \$(DEV1)   \-MIL     "Val:MIL-Wf" "Time:MIL-Wf" }
+}

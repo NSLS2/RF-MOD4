@@ -1,0 +1,9 @@
+file accuhrs.template {
+    pattern
+    {SYS1      DEV1    DEV2    DESC       SUBDEV  A               B   E  }
+    {\$(SYS1) \$(DEV1) \-Stby  "Standby"  ""      BI\:State\-RB   4   9  }
+    {\$(SYS1) \$(DEV1) \-HV    "HV"       ""      BI\:State\-RB   8  14  }
+    {\$(SYS1) \$(DEV1) \-Trig  "Trig"     ""      BI\:State\-RB  12  14  }
+    {\$(SYS1) \$(DEV1) \-Htr   "Heater"   ""      BI\:State\-RB   4  14  }
+    {\$(SYS1) \$(DEV1) \-Fil   "Filament" "\-FPS" I:I             1 100  }
+}

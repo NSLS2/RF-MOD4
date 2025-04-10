@@ -1,0 +1,61 @@
+record(subArray, "$(SYS1){$(DEV1)-SSM:$(N)}ID:SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:SSM$(NF)-Wf")
+  field(FTVL,    "STRING")
+  field(MALM,    "64") 
+  field(NELM,    "1")
+  field(INDX,    "$(NI)")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(N)}ID:Name")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-SSM:$(N)}ID:Name") {    
+  field(DESC,    "SSM name:")
+  field(INP,     "$(SYS1){$(DEV1)-SSM:$(N)}ID:SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(NXT)}ID:SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-SSM:$(N)}State:SubA") {
+  field(INP,     "$(SYS1){$(DEV1)}DI:Stat$(NF)-Wf")
+  field(FTVL,    "ULONG")
+  field(MALM,    "64") 
+  field(NELM,    "1")
+  field(INDX,    "$(NI)")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(N)}State:I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-SSM:$(N)}State:I") {
+  field(INP,     "$(SYS1){$(DEV1)-SSM:$(N)}State:SubA")
+# field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(NXT)}State:SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(N)}Flt:IL-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-SSM:$(N)}Flt:IL-Calc") {
+  field(CALC,    "(A==2||A==6||A==10||A==14||A==15)?A:0")
+  field(INPA,    "$(SYS1){$(DEV1)-SSM:$(N)}State:I")
+  field(OUT,     "$(SYS1){$(DEV1)-SSM:$(N)}Flt:IL PP")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-SSM:$(N)}Flt:IL") {
+  field(INP,     "$(SYS1){$(DEV1)-SSM:$(N)}Flt:IL-Calc")
+  field(HIHI,    "2")
+  field(HHSV,    "MAJOR")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(NXT)}State:SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-SSM:$(N)}Sts:SubA") {
+  field(INP,     "$(SYS1){$(DEV1)}DI:Sts$(NF)-Wf")
+  field(FTVL,    "ULONG")
+  field(MALM,    "64") 
+  field(NELM,    "1")
+  field(INDX,    "$(N)")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(N)}Sts:I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-SSM:$(N)}Sts:I") {
+  field(INP,     "$(SYS1){$(DEV1)-SSM:$(N)}Sts:SubA")
+  field(HIHI,    "2")
+  field(HHSV,    "MAJOR")
+  field(HIGH,    "1")
+  field(HSV,     "MINOR")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:$(NXT)}Sts:SubA")
+}
+

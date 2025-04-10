@@ -1,0 +1,10 @@
+record(waveform, "$(SYS){$(DEV1)$(DEV2)}$(REC)") {
+  field(DESC,    "$(DESC)")
+  field(FTVL,    "ULONG")
+  field(NELM,    "$(NLM)")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn($(INP) $(OFFSET) 1000)INT32_LE")
+  field(SCAN,    "$(SCAN)")
+  field(FLNK,    "$(SYS){$(DEV1)}$(FLK)")
+}
+

@@ -1,0 +1,345 @@
+###############
+# Event Type
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Evt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./events.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "300")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Evt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "300")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Typtxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Typtxt-I")
+{    
+    field(DESC,  "Log event type text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Evt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Typtxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:IX-Wf CP" )
+    field(CALC, "A")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Evt-SubA.INDX PP")
+}
+
+record(waveform,"$(SYS1){$(DEV1)}Val:MEV-Wf") {
+  field(DESC,   "Main Event:")
+  field(FTVL,   "ULONG")
+  field(NELM,   "13")
+  field(DTYP,   "asynInt32ArrayIn")
+  field(INP,    "@asyn(INP_MEV_Struct 0 1000)INT16")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Time:MEV-Wf") 
+}
+
+record(waveform,"$(SYS1){$(DEV1)}Time:MEV-Wf") {
+  field(DESC,   "Main Event:")
+  field(FTVL,   "ULONG")
+  field(NELM,   "8")
+  field(DTYP,   "asynInt32ArrayIn")
+  field(INP,    "@asyn(INP_MEV_Struct 0 1000)INT32_LE")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)-MEV}Val:Inc-SubA") 
+}
+
+record(waveform,"$(SYS1){$(DEV1)}Val:MIL-Wf") {
+  field(DESC,   "Main Interlock:")
+  field(FTVL,   "ULONG")
+  field(NELM,   "13")
+  field(DTYP,   "asynInt32ArrayIn")
+  field(INP,    "@asyn(INP_MIL_Struct 0 1000)INT16")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Time:MIL-Wf") 
+}
+
+record(waveform,"$(SYS1){$(DEV1)}Time:MIL-Wf") {
+  field(DESC,   "Main Event:")
+  field(FTVL,   "ULONG")
+  field(NELM,   "8")
+  field(DTYP,   "asynInt32ArrayIn")
+  field(INP,    "@asyn(INP_MIL_Struct 0 1000)INT32_LE")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)-MIL}Val:Inc-SubA") 
+}
+
+###############
+# Logtext == STATES.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Logtxt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./logtext.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "16")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Logtxt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Logtxt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "16")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Logtxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Logtxt-I")
+{    
+    field(DESC,  "Log entry text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Logtxt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Logtxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Logtxt-SubA.INDX PP")
+}
+
+###############
+# WARNS.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Wrntxt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./WARNS.TXT")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "16")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Wrntxt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "16")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Wrntxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Wrntxt-I")
+{    
+    field(DESC,  "Warning text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Wrntxt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Wrntxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Wrntxt-SubA.INDX PP")
+}
+
+###############
+# ILTYP.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Ilktyp-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./ILTYP.TXT")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "16")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Ilktyp-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Ilktyp-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "16")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Ilktyp-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Ilktyp-I")
+{    
+    field(DESC,  "Interlock type")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Ilktyp-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Ilktyp-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Ilktyp-SubA.INDX PP")
+}
+
+
+###############
+# ILOCK.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Ilktxt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./ILOCK.TXT")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "16")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Ilktxt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Ilktxt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "16")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Ilktxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Ilktxt-I")
+{    
+    field(DESC,  "Interlock text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Ilktxt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Ilktxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Ilktxt-SubA.INDX PP")
+}
+
+###############
+# MESSAGE.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Msgtxt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./MESSAGE.TXT")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "16")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Msgtxt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Msgtxt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "16")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Msgtxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Msgtxt-I")
+{    
+    field(DESC,  "Message text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Msgtxt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Msgtxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Msgtxt-SubA.INDX PP")
+}
+
+###############
+# PARAM.TXT
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Prmtxt-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./PARAM.TXT")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "64")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:Prmtxt-SubA")
+{    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Prmtxt-Wf")    
+  field(FTVL,    "STRING")    
+  field(MALM,    "64")    
+  field(NELM,    "1")    
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:Prmtxt-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:Prmtxt-I")
+{    
+    field(DESC,  "Parameter text")
+    field(INP,   "$(SYS1){$(DEV1)}ID:Prmtxt-SubA")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:Prmtxt-Calc")
+{
+    field(DESC, "Calcuate Text value for Subdevices")
+    field(INPA, "$(SYS1){$(DEV1)}Evt:Txt-I CP" )
+    field(CALC, "A+1")
+    field(OUT,  "$(SYS1){$(DEV1)}ID:Prmtxt-SubA.INDX PP")
+}
+
+###############
+# SSM list for matrix, 4x64 segments
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:SSM1-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./SSM1.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "64")
+  field(FLNK,     "$(SYS1){$(DEV1)-SSM:0}ID:SubA")
+}
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:SSM2-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./SSM2.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "64")
+  field(FLNK,     "$(SYS1){$(DEV1)-SSM:64}ID:SubA")
+}
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:SSM3-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./SSM3.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "64")
+  field(FLNK,     "$(SYS1){$(DEV1)-SSM:128}ID:SubA")
+}
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:SSM4-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./SSM4.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "64")
+  field(FLNK,     "$(SYS1){$(DEV1)-SSM:192}ID:SubA")
+}
+
+###############
+# Full SSM of Matrix, as per <MatrixItems> <Index...> <Names>
+# from file Resource.xml. Jonas Gustafsson file SEP. 27, 2017
+
+record(waveform,  "$(SYS1){$(DEV1)}ID:Ssm-Wf"){
+  field(DTYP,     "fileread")
+  field(INP,      "@./SSM_List.txt")
+  field(PINI,     "YES")
+  field(FTVL,     "STRING")
+  field(NELM,     "256")
+}
+
+################
+# Dummies
+
+record(subArray, "$(SYS1){$(DEV1)-SSM:256}ID:SubA")
+{
+}
+
+record(subArray, "$(SYS1){$(DEV1)-SSM:256}State:SubA")
+{
+}
+
+record(subArray, "$(SYS1){$(DEV1)-SSM:256}Sts:SubA")
+{
+}
+

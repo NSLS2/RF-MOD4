@@ -1,0 +1,5 @@
+file MIL.template {
+    pattern
+    {SYS1      DEV1      DEV2      IN1          IN2          }
+    {\$(SYS1) \$(DEV1)   \-MIL     "Val:MIL-Wf" "Time:MIL-Wf" }
+}

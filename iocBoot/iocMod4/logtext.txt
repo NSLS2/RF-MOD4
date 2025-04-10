@@ -1,0 +1,78 @@
+        Error 
+        Initialize 
+        Off 
+        StandByInterlock 
+        StandByOffRequested 
+        StandByOnRequested 
+        StandBy 
+        HvInterlock 
+        HvOffRequested 
+        HvOnRequested 
+        Hv 
+        TrigInterlock 
+        TrigOffRequested 
+        TrigOnRequested 
+        Trig 
+        Disabled 
+        Llim exceeded 
+        WLlim exceeded 
+        WHlim exceeded 
+        Hlim exceeded 
+        Input missing 
+        Llim exceeded 
+        Hlim exceeded 
+        Input missing 
+        Slave configuration error 
+        Slave error 
+        GUI\ScandiCat code 
+        GUI\SelfTest code 
+        GUI\UnitAi code 
+        GUI\UnitAo code 
+        GUI\UnitDi code 
+        GUI\UnitDly code 
+        GUI\UnitMultiAo code 
+        GUI\UnitMultiDi code 
+        GUI\Ads code 
+        GUI\EventLogg code 
+        GUI\Matrix code 
+        GUI\Trend log code 
+        GUI\Digitizer code 
+        GUI\Config code 
+        Hlim 
+        WHlim 
+        WLlim 
+        Llim 
+        Filter 
+        uiScaleU 
+        uiScalL 
+        rScaleU 
+        rScaleL 
+        Set 
+        Set1 
+        Set2 
+        Invalid Set 
+        Invalid Set1 
+        Invalid Set2 
+        RampTime 
+        OkDly 
+        RampTime1 
+        RampTime2 
+        OkDly1 
+        OkDly2 
+        RampStartSet 
+        Invalid RampStartSet 
+        RampOn 
+        TargetMatrix updated 
+        Hardware config saved 
+        CvdArcTripSet 
+        CtArcTripSet 
+        CtIntegrateTripSet 
+        CtIntegrateDelay 
+        CtIntegrateSamples 
+        TrafoResistance 
+        MaxDownTime 
+        DownTimeFactor 
+        AccessLevel: Remote 
+        AccessLevel: Operator 
+        AccessLevel: Admin 
+        AccessLevel: ScandiNova 

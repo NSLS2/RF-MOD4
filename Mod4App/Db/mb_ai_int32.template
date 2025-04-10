@@ -1,0 +1,12 @@
+record (ai,      "$(SYS){$(DEV1)$(DEV2)}$(REC)") {
+  field(DESC,    "$(DESC)")
+# field(EGU,     "$(EGU)")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask($(INP) $(OFFSET) $(TYPE))MODBUS_DATA")
+  field(INP,     "@asyn($(INP) $(OFFSET) 1000)INT32_LE")
+  field(HOPR,    "$(HOPR)")
+  field(LOPR,    "$(LOPR)")
+  field(PREC,    "$(PREC)")
+  field(SCAN,    "$(SCAN)")
+}
+

@@ -1,0 +1,1900 @@
+record(calcout,  "$(SYS1){$(DEV1)}Val:I00IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "0")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I00I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I00I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I00I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I00I-I")
+{    
+  field(DESC,    "Log entry 0 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I00I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I00ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I00ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I00I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I00F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I00F-I")
+{    
+  field(DESC,    "Log entry 0 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I01IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I01IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "1")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I01I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I01I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I01I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I01I-I")
+{    
+  field(DESC,    "Log entry 1 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I01I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I01ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I01ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I01I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I01F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I01F-I")
+{    
+  field(DESC,    "Log entry 1 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I02IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I02IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "2")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I02I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I02I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I02I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I02I-I")
+{    
+  field(DESC,    "Log entry 2 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I02I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I02ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I02ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I02I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I02F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I02F-I")
+{    
+  field(DESC,    "Log entry 2 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I03IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I03IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "3")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I03I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I03I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I03I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I03I-I")
+{    
+  field(DESC,    "Log entry 3 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I03I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I03ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I03ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I03I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I03F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I03F-I")
+{    
+  field(DESC,    "Log entry 3 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I04IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I04IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "4")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I04I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I04I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I04I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I04I-I")
+{    
+  field(DESC,    "Log entry 4 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I04I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I04ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I04ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I04I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I04F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I04F-I")
+{    
+  field(DESC,    "Log entry 4 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I05IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I05IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "5")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I05I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I05I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I05I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I05I-I")
+{    
+  field(DESC,    "Log entry 5 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I05I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I05ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I05ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I05I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I05F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I05F-I")
+{    
+  field(DESC,    "Log entry 5 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I06IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I06IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "6")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I06I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I06I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I06I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I06I-I")
+{    
+  field(DESC,    "Log entry 6 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I06I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I06ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I06ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I06I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I06F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I06F-I")
+{    
+  field(DESC,    "Log entry 6 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I07IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I07IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "7")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I07I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I07I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I07I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I07I-I")
+{    
+  field(DESC,    "Log entry 7 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I07I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I07ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I07ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I07I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I07F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I07F-I")
+{    
+  field(DESC,    "Log entry 7 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I08IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I08IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "8")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I08I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I08I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I08I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I08I-I")
+{    
+  field(DESC,    "Log entry 8 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I08I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I08ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I08ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I08I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I08F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I08F-I")
+{    
+  field(DESC,    "Log entry 8 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I09IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I09IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "9")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I09I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I09I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I09I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I09I-I")
+{    
+  field(DESC,    "Log entry 9 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I09I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I09ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I09ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I09I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I09F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I09F-I")
+{    
+  field(DESC,    "Log entry 9 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I10IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I10IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "10")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I10I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I10I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I10I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I10I-I")
+{    
+  field(DESC,    "Log entry 10 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I10I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I10ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I10ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I10I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I10F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I10F-I")
+{    
+  field(DESC,    "Log entry 10 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I11IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I11IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "11")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I11I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I11I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I11I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I11I-I")
+{    
+  field(DESC,    "Log entry 11 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I11I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I11ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I11ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I11I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I11F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I11F-I")
+{    
+  field(DESC,    "Log entry 11 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I12IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I12IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "12")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I12I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I12I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I12I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I12I-I")
+{    
+  field(DESC,    "Log entry 12 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I12I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I12ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I12ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I12I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I12F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I12F-I")
+{    
+  field(DESC,    "Log entry 12 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I13IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I13IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "13")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I13I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I13I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I13I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I13I-I")
+{    
+  field(DESC,    "Log entry 13 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I13I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I13ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I13ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I13I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I13F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I13F-I")
+{    
+  field(DESC,    "Log entry 13 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I14IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I14IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "14")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I14I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I14I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I14I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I14I-I")
+{    
+  field(DESC,    "Log entry 14 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I14I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I14ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I14ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I14I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I14F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I14F-I")
+{    
+  field(DESC,    "Log entry 14 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I15IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I15IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "15")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I15I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I15I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I15I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I15I-I")
+{    
+  field(DESC,    "Log entry 15 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I15I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I15ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I15ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I15I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I15F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I15F-I")
+{    
+  field(DESC,    "Log entry 15 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I16IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I16IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "16")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I16I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I16I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I16I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I16I-I")
+{    
+  field(DESC,    "Log entry 16 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I16I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I16ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I16ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I16I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I16F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I16F-I")
+{    
+  field(DESC,    "Log entry 16 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I17IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I17IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "17")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I17I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I17I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I17I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I17I-I")
+{    
+  field(DESC,    "Log entry 17 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I17I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I17ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I17ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I17I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I17F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I17F-I")
+{    
+  field(DESC,    "Log entry 17 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I18IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I18IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "18")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I18I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I18I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I18I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I18I-I")
+{    
+  field(DESC,    "Log entry 18 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I18I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I18ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I18ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I18I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I18F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I18F-I")
+{    
+  field(DESC,    "Log entry 18 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I19IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I19IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "19")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I19I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I19I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I19I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I19I-I")
+{    
+  field(DESC,    "Log entry 19 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I19I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I19ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I19ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I19I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I19F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I19F-I")
+{    
+  field(DESC,    "Log entry 19 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I20IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I20IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "20")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I20I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I20I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I20I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I20I-I")
+{    
+  field(DESC,    "Log entry 20 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I20I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I20ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I20ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I20I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I20F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I20F-I")
+{    
+  field(DESC,    "Log entry 20 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I21IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I21IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "21")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I21I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I21I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I21I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I21I-I")
+{    
+  field(DESC,    "Log entry 21 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I21I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I21ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I21ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I21I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I21F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I21F-I")
+{    
+  field(DESC,    "Log entry 21 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I22IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I22IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "22")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I22I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I22I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I22I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I22I-I")
+{    
+  field(DESC,    "Log entry 22 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I22I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I22ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I22ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I22I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I22F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I22F-I")
+{    
+  field(DESC,    "Log entry 22 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I23IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I23IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "23")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I23I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I23I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I23I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I23I-I")
+{    
+  field(DESC,    "Log entry 23 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I23I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I23ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I23ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I23I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I23F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I23F-I")
+{    
+  field(DESC,    "Log entry 23 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I24IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I24IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "24")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I24I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I24I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I24I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I24I-I")
+{    
+  field(DESC,    "Log entry 24 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I24I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I24ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I24ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I24I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I24F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I24F-I")
+{    
+  field(DESC,    "Log entry 24 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I25IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I25IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "25")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I25I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I25I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I25I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I25I-I")
+{    
+  field(DESC,    "Log entry 25 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I25I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I25ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I25ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I25I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I25F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I25F-I")
+{    
+  field(DESC,    "Log entry 25 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I26IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I26IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "26")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I26I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I26I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I26I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I26I-I")
+{    
+  field(DESC,    "Log entry 26 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I26I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I26ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I26ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I26I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I26F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I26F-I")
+{    
+  field(DESC,    "Log entry 26 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I27IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I27IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "27")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I27I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I27I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I27I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I27I-I")
+{    
+  field(DESC,    "Log entry 27 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I27I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I27ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I27ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I27I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I27F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I27F-I")
+{    
+  field(DESC,    "Log entry 27 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I28IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I28IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "28")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I28I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I28I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I28I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I28I-I")
+{    
+  field(DESC,    "Log entry 28 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I28I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I28ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I28ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I28I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I28F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I28F-I")
+{    
+  field(DESC,    "Log entry 28 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I29IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I29IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "29")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I29I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I29I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I29I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I29I-I")
+{    
+  field(DESC,    "Log entry 29 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I29I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I29ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I29ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I29I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I29F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I29F-I")
+{    
+  field(DESC,    "Log entry 29 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I30IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I30IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "30")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I30I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I30I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I30I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I30I-I")
+{    
+  field(DESC,    "Log entry 30 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I30I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I30ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I30ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I30I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I30F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I30F-I")
+{    
+  field(DESC,    "Log entry 30 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I31IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I31IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "31")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I31I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I31I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I31I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I31I-I")
+{    
+  field(DESC,    "Log entry 31 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I31I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I31ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I31ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I31I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I31F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I31F-I")
+{    
+  field(DESC,    "Log entry 31 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I32IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I32IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "32")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I32I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I32I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I32I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I32I-I")
+{    
+  field(DESC,    "Log entry 32 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I32I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I32ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I32ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I32I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I32F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I32F-I")
+{    
+  field(DESC,    "Log entry 32 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I33IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I33IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "33")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I33I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I33I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I33I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I33I-I")
+{    
+  field(DESC,    "Log entry 33 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I33I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I33ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I33ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I33I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I33F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I33F-I")
+{    
+  field(DESC,    "Log entry 33 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I34IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I34IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "34")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I34I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I34I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I34I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I34I-I")
+{    
+  field(DESC,    "Log entry 34 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I34I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I34ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I34ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I34I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I34F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I34F-I")
+{    
+  field(DESC,    "Log entry 34 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I35IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I35IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "35")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I35I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I35I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I35I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I35I-I")
+{    
+  field(DESC,    "Log entry 35 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I35I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I35ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I35ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I35I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I35F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I35F-I")
+{    
+  field(DESC,    "Log entry 35 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I36IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I36IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "36")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I36I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I36I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I36I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I36I-I")
+{    
+  field(DESC,    "Log entry 36 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I36I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I36ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I36ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I36I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I36F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I36F-I")
+{    
+  field(DESC,    "Log entry 36 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I37IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I37IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "37")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I37I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I37I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I37I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I37I-I")
+{    
+  field(DESC,    "Log entry 37 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I37I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I37ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I37ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I37I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I37F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I37F-I")
+{    
+  field(DESC,    "Log entry 37 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I38IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I38IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "38")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I38I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I38I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I38I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I38I-I")
+{    
+  field(DESC,    "Log entry 38 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I38I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I38ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I38ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I38I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I38F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I38F-I")
+{    
+  field(DESC,    "Log entry 38 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I39IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I39IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "39")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I39I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I39I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I39I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I39I-I")
+{    
+  field(DESC,    "Log entry 39 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I39I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I39ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I39ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I39I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I39F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I39F-I")
+{    
+  field(DESC,    "Log entry 39 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I40IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I40IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "40")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I40I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I40I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I40I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I40I-I")
+{    
+  field(DESC,    "Log entry 40 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I40I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I40ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I40ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I40I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I40F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I40F-I")
+{    
+  field(DESC,    "Log entry 40 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I41IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I41IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "41")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I41I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I41I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I41I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I41I-I")
+{    
+  field(DESC,    "Log entry 41 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I41I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I41ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I41ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I41I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I41F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I41F-I")
+{    
+  field(DESC,    "Log entry 41 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I42IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I42IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "42")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I42I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I42I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I42I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I42I-I")
+{    
+  field(DESC,    "Log entry 42 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I42I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I42ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I42ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I42I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I42F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I42F-I")
+{    
+  field(DESC,    "Log entry 42 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I43IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I43IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "43")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I43I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I43I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I43I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I43I-I")
+{    
+  field(DESC,    "Log entry 43 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I43I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I43ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I43ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I43I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I43F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I43F-I")
+{    
+  field(DESC,    "Log entry 43 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I44IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I44IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "44")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I44I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I44I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I44I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I44I-I")
+{    
+  field(DESC,    "Log entry 44 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I44I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I44ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I44ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I44I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I44F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I44F-I")
+{    
+  field(DESC,    "Log entry 44 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I45IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I45IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "45")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I45I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I45I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I45I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I45I-I")
+{    
+  field(DESC,    "Log entry 45 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I45I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I45ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I45ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I45I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I45F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I45F-I")
+{    
+  field(DESC,    "Log entry 45 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I46IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I46IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "46")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I46I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I46I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I46I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I46I-I")
+{    
+  field(DESC,    "Log entry 46 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I46I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I46ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I46ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I46I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I46F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I46F-I")
+{    
+  field(DESC,    "Log entry 46 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I47IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I47IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "47")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I47I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I47I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I47I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I47I-I")
+{    
+  field(DESC,    "Log entry 47 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I47I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I47ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I47ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I47I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I47F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I47F-I")
+{    
+  field(DESC,    "Log entry 47 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I48IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I48IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "48")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I48I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I48I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I48I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I48I-I")
+{    
+  field(DESC,    "Log entry 48 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I48I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I48ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I48ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I48I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I48F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I48F-I")
+{    
+  field(DESC,    "Log entry 48 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I49IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:I49IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "49")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Val:I49I-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:I49I-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Log32-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I49I-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:I49I-I")
+{    
+  field(DESC,    "Log entry 49 INT data:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:I49I-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I49ifl-aSub")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Val:I49ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)}Val:I49I-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:I49F-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)}Val:I49F-I")
+{    
+  field(DESC,    "Log entry 49 FLT data:")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:N50IX-Calc")
+}
+

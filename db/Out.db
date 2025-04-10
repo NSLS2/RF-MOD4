@@ -1,0 +1,157 @@
+record(calcout,  "$(SYS1){$(DEV1)}Cnt:WD-Calc") {
+  field(DESC,    "Watchdog Update:")
+  field(SCAN,    ".5 second")
+  field(CALC,    "A+1")
+  field(INPA,    "$(SYS1){$(DEV1)}Cnt:WD-SP")
+  field(OUT,     "$(SYS1){$(DEV1)}Cnt:WD-SP PP")
+}
+
+record(longout,  "$(SYS1){$(DEV1)}Cnt:WD-SP") {
+  field(DESC,    "Watchdog OUT:")
+  field(DTYP,    "asynInt32")
+  field(OUT,     "@asyn(OUT_Watchdog 0 1000)INT16")
+  field(FLNK,    "$(SYS1){$(DEV1)}Cnt:WDSP-Calc")
+}
+
+
+record(scalcout, "$(SYS1){$(DEV1)}Cnt:WDSP-Calc") {
+  field(DESC,    "Watchdog to str")
+  field(CALC,    "PRINTF(' %u',A&0xffff)")
+  field(INPA,    "$(SYS1){$(DEV1)}Cnt:WD-SP CPP")
+  field(OUT,     "$(SYS1){$(DEV1)}Cnt:WDSP PP ")
+}
+
+record(stringout,"$(SYS1){$(DEV1)}Cnt:WDSP") {
+  field(DESC,    "Watchdog string out:")
+}
+
+record(mbbo,     "$(SYS1){$(DEV1)}State-Sel") {
+  field(DESC,    "Target State:")
+  field(ZRVL,    "1")
+  field(ZRST,    "Off")
+  field(ONVL,    "5")
+  field(ONST,    "Standby")
+  field(TWVL,    "9")
+  field(TWST,    "Hv")
+  field(THVL,    "13")
+  field(THST,    "Trig")
+  field(DTYP,    "asynInt32")
+  field(OUT,     "@asyn(OUT_TargetState 0 1000)INT16")
+  field(SDIS,    "$(SYS1){$(DEV1)}BI:OpMode CP")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(bo,       "$(SYS1){$(DEV1)}Rst:Cmd") {
+  field(DESC,    "Reset")
+  field(ZNAM,    "Idle")
+  field(ONAM,    "Reset")
+  field(HIGH,    "1.0")
+  field(FLNK,    "$(SYS1){$(DEV1)}DO:Cmd")
+}
+
+record(longout,  "$(SYS1){$(DEV1)}DO:Cmd") {
+  field(DESC,    "Command:")
+  field(OMSL,    "closed_loop")
+  field(DOL,     "$(SYS1){$(DEV1)}Rst:Cmd")
+  field(DTYP,    "asynInt32")
+  field(OUT,     "@asyn(OUT_Command 0 1000)INT16")
+}
+
+record(ao,       "$(SYS1){$(DEV1)-CCPS}E:SP") {
+  field(DESC,    "Ccps\\VoltSet")
+  field(EGU,     "V")
+  field(PREC,    "1")
+  field(HOPR,    "1400")
+  field(DRVH,    "1400")
+  field(LOPR,    "0")
+  field(DRVL,    "0")
+  field(DTYP,    "asynFloat64")
+  field(OUT,     "@asyn(OUT_VoltSetRem 0 1000)FLOAT32_LE")
+  field (ASG,    "RFEXPERT-LN")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(ao,       "$(SYS1){$(DEV1)-Fil}I:SP") {
+  field(DESC,    "Kly\\FpsCurrSet1")
+  field(PREC,    "1")
+  field(EGU,     "A")
+  field(HOPR,    "30")
+  field(DRVH,    "30")
+  field(LOPR,    "0")
+  field(DRVL,    "0")
+  field(DTYP,    "asynFloat64")
+  field(OUT,     "@asyn(OUT_FilCurrSet 0 1000)FLOAT32_LE")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Time:PW-SP") {
+  field(DESC,    "Switch\\PlswthSet")
+  field(PREC,    "1")
+  field(EGU,     "us")
+  field(HOPR,    "6")
+  field(DRVH,    "6")
+  field(LOPR,    "0")
+  field(DRVL,    "0")
+  field(DTYP,    "asynFloat64")
+  field(OUT,     "@asyn(OUT_PulseWidth 0 1000)FLOAT32_LE")
+  field (ASG,    "RFEXPERT-LN")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(longout,  "$(SYS1){$(DEV1)-Dig}Cnt:Wf-SP") {
+  field(DESC,    "Digitizer WF selector:")
+  field(SCAN,    "1 second")
+  field(DRVL,    "0")
+  field(LOPR,    "0")
+  field(DRVH,    "39")
+  field(HOPR,    "39")
+  field(PINI,    "YES")
+  field(FLNK,    "$(SYS1){$(DEV1)-Dig}Cnt:Wf-SP_")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(longout,  "$(SYS1){$(DEV1)-Dig}Cnt:Wf-SP_") {
+  field(DESC,    "Digitizer WF selector:")
+  field(DOL,     "$(SYS1){$(DEV1)-Dig}Cnt:Wf-SP")
+  field(OMSL,    "closed_loop")
+  field(DTYP,    "asynInt32")
+  field(OUT,     "@asyn(OUT_DigiWfSeq 0 1000)INT16")
+  field(DRVL,    "0")
+  field(LOPR,    "0")
+  field(DRVH,    "39")
+  field(HOPR,    "39")
+  field(FLNK,    "$(SYS1){$(DEV1)-Dig}ID:Wf-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-Dig}ID:Wf-Calc") {
+  field(DESC,    "Calcuate digitizer WF name:")
+  field(INPA,    "$(SYS1){$(DEV1)-Dig}Cnt:Wf-SP" )
+  field(CALC,    "A")
+  field(OUT,     "$(SYS1){$(DEV1)-Dig}ID:Wf-SubA.INDX PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)-Dig}ID:Wf") {
+  field(DTYP,    "fileread")
+  field(INP,     "@./digch.txt")
+  field(PINI,    "YES")
+  field(FTVL,    "STRING")
+  field(NELM,    "40")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-Dig}ID:Wf-SubA") {
+  field(INP,     "$(SYS1){$(DEV1)-Dig}ID:Wf")
+  field(FTVL,    "STRING")
+  field(MALM,    "40")
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-Dig}ID:Wf-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-Dig}ID:Wf-I") {
+  field(DESC,    "Digitizer WF ID:")
+  field(INP,     "$(SYS1){$(DEV1)-Dig}ID:Wf-SubA")
+}
+
+
+
+
+

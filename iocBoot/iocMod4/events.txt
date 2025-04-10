@@ -1,0 +1,6 @@
+State
+Warning
+Interlock
+Error
+Parameter
+Message

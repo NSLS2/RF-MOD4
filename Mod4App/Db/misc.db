@@ -1,0 +1,572 @@
+record(stringin, "$(SYS1){$(DEV1)}TOD") {
+  field(DESC,    "Current date and time:")
+  field(DTYP,    "Soft Timestamp")
+  field(SCAN,    "1 second")
+  field(INP,     "@%m/%d/%Y %H:%M:%S")
+}
+
+record(mbbi,    "$(SYS1){$(DEV1)}BI:OpMode") {
+  field(DESC,   "AccessLevel:")
+  field(NOBT,   "2")
+  field(INP,    "$(SYS1){$(DEV1)}OpMode-Sts CPP")
+  field(ZRVL,   "0")
+  field(ZRST,   "Remote")
+  field(ONVL,   "1")
+  field(ONST,   "Local")
+  field(TWVL,   "2")
+  field(TWST,   "TWO")
+  field(THVL,   "3")
+  field(THST,   "Scandinova")
+}
+
+record(mbbi,    "$(SYS1){$(DEV1)}BI:State-Sts") {
+  field(DESC,   "Current State:")
+  field(INP,    "$(SYS1){$(DEV1)}State-Sts CPP")
+  field(NOBT,   "4")
+  field(ZRVL,   "0")
+  field(ZRST,   "Init")
+  field(ONVL,   "1")
+  field(ONST,   "Off")
+  field(TWVL,   "2")
+  field(TWST,   "StandbyInterlock")
+  field(THVL,   "3")
+  field(THST,   "StandbyOffRequested")
+  field(FRVL,   "4")
+  field(FRST,   "StandbyOnRequested")
+  field(FVVL,   "5")
+  field(FVST,   "Standby")
+  field(SXVL,   "6")
+  field(SXST,   "HvInterlock")
+  field(SVVL,   "7")
+  field(SVST,   "HvOffRequested")
+  field(EIVL,   "8")
+  field(EIST,   "HvOnRequested")
+  field(NIVL,   "9")
+  field(NIST,   "Hv")
+  field(TEVL,   "10")
+  field(TEST,   "TrigInterlock")
+  field(ELVL,   "11")
+  field(ELST,   "TrigOffRequested")
+  field(TVVL,   "12")
+  field(TVST,   "TrigOnRequested")
+  field(TTVL,   "13")
+  field(TTST,   "Trig")
+  field(FTVL,   "14")
+  field(FTST,   "DISABLED")
+  field(FFVL,   "15")
+  field(FFST,   "ERROR")
+  field(FFSV,   "MAJOR")
+}
+
+record(mbbi,    "$(SYS1){$(DEV1)}BI:State-RB") {
+  field(DESC,   "Target State:")
+  field(INP,    "$(SYS1){$(DEV1)}State-RB CPP")
+  field(NOBT,   "4")
+  field(ZRVL,   "0")
+  field(ZRST,   "Undefined")
+  field(ONVL,   "1")
+  field(ONST,   "Off")
+  field(TWVL,   "2")
+  field(TWST,   "Two")
+  field(THVL,   "3")
+  field(THST,   "Three")
+  field(FRVL,   "4")
+  field(FRST,   "StandbyOnRequested")
+  field(FVVL,   "5")
+  field(FVST,   "Standby")
+  field(SXVL,   "6")
+  field(SXST,   "Six")
+  field(SVVL,   "7")
+  field(SVST,   "HvOffRequested")
+  field(EIVL,   "8")
+  field(EIST,   "HvOnRequested")
+  field(NIVL,   "9")
+  field(NIST,   "Hv")
+  field(TEVL,   "10")
+  field(TEST,   "Ten")
+  field(ELVL,   "11")
+  field(ELST,   "Eleven")
+  field(TVVL,   "12")
+  field(TVST,   "Twelve")
+  field(TTVL,   "13")
+  field(TTST,   "Trig")
+  field(FTVL,   "14")
+  field(FTST,   "Fourteen")
+  field(FFVL,   "15")
+  field(FFST,   "Fifteen")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Cnt:WD-I") {
+  field(DESC,    "Unsigned watchdog")
+  field(INP,     "$(SYS1){$(DEV1)}Cnt:WD-I_ CPP")
+  field(FLNK,    "$(SYS1){$(DEV1)}Cnt:WDS-Calc")
+}
+
+record(scalcout, "$(SYS1){$(DEV1)}Cnt:WDS-Calc") {
+  field(DESC,    "Watchdog to str")
+  field(CALC,    "PRINTF(' %u',A&0xffff)")
+  field(INPA,    "$(SYS1){$(DEV1)}Cnt:WD-I CPP")
+  field(OUT,     "$(SYS1){$(DEV1)}Cnt:WDS PP ")
+}
+
+record(stringout,"$(SYS1){$(DEV1)}Cnt:WDS") {
+  field(DESC,    "Watchdog string")
+}
+
+###################################################################
+# Dummy support records
+
+record(subArray, "$(SYS1){$(DEV1)}ID:N50-SubA") {
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:N50IX-Calc") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:NTyp50-SubA") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:NTrg50-SubA") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:NDtp50-SubA") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS1100-SubA") {
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS1100IX-Calc") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID50-SubA") {
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID50IX-Calc") {
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Val:Dmy-SubA") {
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Val:Dmy-Calc") {
+}
+###################################################################
+# SEP. 9, 2019: Flt:KlyVac calc to emulate klystron vacuum faults on
+# old type of modulators (with external IP controller)
+
+record(calcout,  "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-Calc") {
+  field(CALC,    "A?A:(B?B:C)")
+  field(INPA,    "$(SYS1){$(DEV1)-IP:1}I:I.SEVR MMS")
+  field(INPB,    "$(SYS1){$(DEV1)-IP:1}E:I.SEVR MMS")
+  field(INPC,    "$(SYS1){$(DEV1)-IP:1}P:I.SEVR MMS")
+  field(HIGH,    "1")
+  field(HSV,     "MINOR")
+  field(HIHI,    "2")
+  field(HHSV,    "MAJOR")
+  field(OUT,     "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-I PP")
+}
+
+record(mbbo,     "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-I") {
+  field(NOBT,    "2")
+  field(ZRVL,    "0")
+  field(ZRSV,    "NO_ALARM")
+  field(ZRST,    "NO_ALARM")
+  field(ONVL,    "1")
+  field(ONSV,    "MINOR")
+  field(ONST,    "MINOR")
+  field(TWVL,    "2")
+  field(TWSV,    "MAJOR")
+  field(TWST,    "MAJOR")
+}
+
+###################################################################
+#
+record(acalcout, "$(SYS1){$(DEV1)}DI:XWf-Calc") {
+  field(DESC,    "Digitizer X Wf:")
+  field(CALC,    "IX")
+  field(NELM,    "512")
+  field(NUSE,    "512")
+  field(PINI,    "YES")
+  field(OUT,     "$(SYS1){$(DEV1)}DI:DigX-Wf PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:DigX-Wf") {
+  field(DESC,    "Digitizer X Wf:")
+  field(FTVL,    "DOUBLE")
+  field(NELM,    "512")
+}
+
+###################################################################
+#
+# Concatenate 8 64 (shorts) = 512 short int vals = 1024 bytes of
+# digitizer waveforms to a 1024 values long waveform
+#
+record(acalcout, "$(SYS1){$(DEV1)}DI:08-Wf") {
+  field(DESC,    "Concat digitizer MS Wf:")
+  field(CALC,    "(DD>>448)+(CC>>384)+(BB>>320)+(AA>>256)")
+  field(NELM,    "512")
+  field(NUSE,    "512")
+  field(INAA,    "$(SYS1){$(DEV1)}DI:04B-Wf")
+  field(INBB,    "$(SYS1){$(DEV1)}DI:05B-Wf")
+  field(INCC,    "$(SYS1){$(DEV1)}DI:06B-Wf")
+  field(INDD,    "$(SYS1){$(DEV1)}DI:07B-Wf")
+  field(OUT,     "$(SYS1){$(DEV1)}DI:DigMS-Wf PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:DigMS-Wf") {
+  field(DESC,    "Digitizer Wf:")
+  field(FTVL,    "DOUBLE")
+  field(NELM,    "512")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:09-Wf")
+}
+
+record(acalcout, "$(SYS1){$(DEV1)}DI:09-Wf") {
+  field(DESC,    "Concat digitizer LS Wf:")
+  field(CALC,    "(DD>>192)+(CC>>128)+(BB>>64)+(AA>>0)")
+  field(NELM,    "512")
+  field(NUSE,    "512")
+  field(INAA,    "$(SYS1){$(DEV1)}DI:00B-Wf")
+  field(INBB,    "$(SYS1){$(DEV1)}DI:01B-Wf")
+  field(INCC,    "$(SYS1){$(DEV1)}DI:02B-Wf")
+  field(INDD,    "$(SYS1){$(DEV1)}DI:03B-Wf")
+  field(OUT,     "$(SYS1){$(DEV1)}DI:DigLS-Wf PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:DigLS-Wf") {
+  field(DESC,    "Digitizer Wf:")
+  field(FTVL,    "DOUBLE")
+  field(NELM,    "512")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:10-Wf")
+}
+
+record(acalcout, "$(SYS1){$(DEV1)}DI:10-Wf") {
+  field(DESC,    "Concat digitizer Wf:")
+  field(CALC,    "AA+BB")
+  field(NELM,    "512")
+  field(NUSE,    "512")
+  field(INAA,    "$(SYS1){$(DEV1)}DI:DigLS-Wf")
+  field(INBB,    "$(SYS1){$(DEV1)}DI:DigMS-Wf")
+  field(OUT,     "$(SYS1){$(DEV1)}DI:Dig-Wf PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Dig-Wf") {
+  field(DESC,    "Digitizer Wf:")
+  field(FTVL,    "DOUBLE")
+  field(NELM,    "512")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-SubA")
+}
+
+#..................................................................
+# Extract timestamp of the digitizer waveform:
+#..................................................................
+
+record(subArray, "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}DI:00-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "64")
+  field(NELM,    "1")
+  field(INDX,    "0")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-I") {    
+# field(INP,     "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-SubA")
+#
+# Meanwhile, until the real digitizer device becomes available
+# use Master Event Structure timestamp:
+#
+  field(INP,     "$(SYS1){$(DEV1)-MEV}Time:TS1-I")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}DI:00-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "64") 
+  field(NELM,    "1")
+  field(INDX,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-I") {    
+# field(INP,     "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-SubA")
+#
+# Meanwhile, until the real digitizer device becomes available
+# use Master Event Structure timestamp:
+#
+  field(INP,     "$(SYS1){$(DEV1)-MEV}Time:TS2-I")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TScv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)-$(DEV2)}Time:TScv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS1-I")
+  field(INPB,    "$(SYS1){$(DEV1)-$(DEV2)}Time:TS2-I")
+  field(OUTA,    "$(SYS1){$(DEV1)-$(DEV2)}Val:TS PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-$(DEV2)}Val:TS") {
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}ID:1-SubA")
+}
+
+#..................................................................
+# Extract PulseID of the digitizer waveform:
+#..................................................................
+
+record(subArray, "$(SYS1){$(DEV1)-$(DEV2)}ID:1-SubA") {
+  field(INP,     "$(SYS1){$(DEV1)}DI:00-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "64")
+  field(NELM,    "1")
+  field(INDX,    "4")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}ID:1-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-$(DEV2)}ID:1-I") {
+  field(INP,     "$(SYS1){$(DEV1)-$(DEV2)}ID:1-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}ID:2-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-$(DEV2)}ID:2-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}DI:00-Wf")   
+  field(FTVL,    "ULONG")
+  field(MALM,    "64") 
+  field(NELM,    "1")
+  field(INDX,    "8")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}ID:2-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-$(DEV2)}ID:2-I") {
+  field(INP,     "$(SYS1){$(DEV1)-$(DEV2)}ID:2-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}ID:Pulse-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-$(DEV2)}ID:Pulse-Calc") {
+  field(DESC,    "PulseId:")
+  field(CALC,    "B*C+A")
+  field(INPA,    "$(SYS1){$(DEV1)-$(DEV2)}ID:1-I")
+  field(INPB,    "$(SYS1){$(DEV1)-$(DEV2)}ID:2-I")
+#
+# 2^32 = 4294 967 296
+#
+  field(INPC,    "4294967296")
+  field(OUT,     "$(SYS1){$(DEV1)-$(DEV2)}ID:Pulse-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)-$(DEV2)}ID:Pulse-I") {
+  field(DESC,    "PulseID:")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Cnt:Samp-SubA")
+}
+
+#..................................................................
+# Extract NoOfSamples from the digitizer waveform:
+#..................................................................
+
+record(subArray, "$(SYS1){$(DEV1)-$(DEV2)}Cnt:Samp-SubA") {
+  field(DESC,    "NoOfSamples:")
+  field(INP,     "$(SYS1){$(DEV1)}DI:00-Wf")   
+  field(FTVL,    "USHORT")
+  field(MALM,    "512")
+  field(NELM,    "1")
+  field(INDX,    "8")
+  field(FLNK,    "$(SYS1){$(DEV1)-$(DEV2)}Cnt:Samp")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-$(DEV2)}Cnt:Samp") {
+  field(DESC,    "NoOfSamples:")
+  field(INP,     "$(SYS1){$(DEV1)-$(DEV2)}Cnt:Samp-SubA")
+}
+
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#==================================================================
+
+record(longin,   "$(SYS1){$(DEV1)}Val:TL1") {
+  field(PINI,    "YES")
+  field(VAL,     "1")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Val:TL2") {
+  field(PINI,    "YES")
+  field(VAL,     "2")
+}
+
+#record(aSub,     "$(SYS1){$(DEV1)}Time:TScv-Calc")
+#{
+#  field(INAM,    "scandiTsubInit")
+#  field(SNAM,    "scandiTsubProcess")
+#  field(SCAN,    "10 second")
+#  field(FTA,     "ULONG")
+#  field(NOA,     "1")
+#  field(FTB,     "ULONG")
+#  field(NOB,     "1")
+#  field(INPA,    "$(SYS1){$(DEV1)}Val:TL1")
+#  field(INPB,    "$(SYS1){$(DEV1)}Val:TL2")
+#  field(OUTA,    "$(SYS1){$(DEV1)}Val:TOut PP")
+#  field(NOVA,    "39")
+#  field(FTVA,    "STRING")
+#}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TScv-Calc")
+{
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS100-I CPP")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS101-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TOut PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TOut") {
+# field(TPRO,    "1")
+}
+
+###################################################################
+# Concatenate timestamp waveforms, TS1 & TS2, (50+50 32bit ULONGs),
+# received from Modbus to one 100 ULONGs waveform:
+
+record(acalcout, "$(SYS1){$(DEV1)}Time:TS-Calc") {
+  field(DESC,    "Concat TS1 & TS2")
+  field(CALC,    "AA+(BB>>50)")
+  field(NELM,    "100")
+  field(NUSE,    "100")
+  field(INAA,    "$(SYS1){$(DEV1)}Time:TS1-Wf")
+  field(INBB,    "$(SYS1){$(DEV1)}Time:TS2-Wf")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS-Wf PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Time:TS-Wf") {
+  field(DESC,    "Timestamp array:")
+  field(FTVL,    "ULONG")
+  field(NELM,    "100")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS100IX-Calc")
+}
+
+###################################################################
+# State codes for display
+#
+
+record(longin,  "$(SYS1){$(DEV1)}State:ZRVL") {
+  field(DESC,   "Init")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "0")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:ONVL") {
+  field(DESC,   "Off")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "1")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:TWVL") {
+  field(DESC,   "StandbyInterlock")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "2")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:THVL") {
+  field(DESC,   "StandbyOffRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "3")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:FRVL") {
+  field(DESC,   "StandbyOnRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "4")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:FVVL") {
+  field(DESC,   "Standby")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "5")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:SXVL") {
+  field(DESC,   "HvInterlock")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "6")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:SVVL") {
+  field(DESC,   "HvOffRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "7")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:EIVL") {
+  field(DESC,   "HvOnRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "8")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:NIVL") {
+  field(DESC,   "Hv")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "9")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:TEVL") {
+  field(DESC,   "TrigInterlock")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "10")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:ELVL") {
+  field(DESC,   "TrigOffRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "11")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:TVVL") {
+  field(DESC,   "TrigOnRequested")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "12")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:TTVL") {
+  field(DESC,   "Trig")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "13")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:FTVL") {
+  field(DESC,   "DISABLED")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "14")
+}
+
+record(longin,  "$(SYS1){$(DEV1)}State:FFVL") {
+  field(DESC,   "ERROR")
+  field(PINI,   "YES")
+  field(DISA,   "1")
+  field(VAL,    "15")
+}
+
+

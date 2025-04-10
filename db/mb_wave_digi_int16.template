@@ -1,0 +1,47 @@
+record(waveform, "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)-Wf") {
+  field(DESC,    "Digitizer Wf $(WNO)")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave$(WNO) $(OFFSET) 1000)UINT16")
+  field(SCAN,    "$(SCAN)")
+#  field(FLNK,    "$(SYS){$(DEV1)$(DEV2)}$(FLK)")
+  field(FLNK,    "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)Wf-Calc")
+}
+
+record(ao,       "$(SYS){$(DEV1)$(DEV2)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)Wf-Calc") {
+##  field(DESC,    "Support CALC for testing $(WNO)")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)-Wf")
+##  field(INPA,    "$(G1)")
+##  field(INPB,    "$(G2)")
+##  field(INPC,    "$(O)")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)B-Wf PP")
+##}
+
+record(aSub,     "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)-Wf")
+  field(INPB,    "$(SYS){$(DEV1)$(DEV2)}Val:K-SP")
+  field(OUTA,    "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)B-Wf  PP")
+}
+
+record(waveform, "$(SYS){$(DEV1)$(DEV2)}DI:$(WNO)B-Wf") {
+  field(DESC,    "Support Wf $(WNO)")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS){$(DEV1)$(DEV2)}$(FLK)")
+}

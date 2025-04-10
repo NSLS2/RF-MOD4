@@ -1,0 +1,1645 @@
+record (ai,      "$(SYS1){$(DEV1)}ID:MB") {
+  field(DESC,    "Modbus  ID:")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_MB_ID 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_MB_ID 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}ID:REV") {
+  field(DESC,    "Modbus REV:")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_MB_REV 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_MB_REV 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Cnt:WD-I_") {
+  field(DESC,    "Watchdog IN:")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_TcpWatchdog 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_TcpWatchdog 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    ".2 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}State-Sts") {
+  field(DESC,    "State")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_State 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_State 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}State-RB") {
+  field(DESC,    "Target State")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_TargetState 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_TargetState 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Sts:I") {
+  field(DESC,    "Status")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_StatusBits 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_StatusBits 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}OpMode-Sts") {
+  field(DESC,    "AccessLevel:")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_AccessLevel 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_AccessLevel 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)-PS:1}DI:IL-Sts") {
+  field(DESC,    "Ccps\Ps1SumSts")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_CCPS1ILRead 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_CCPS1ILRead 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:LogIX-I") {
+  field(DESC,    "EventsIndex")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_EventsIndex 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_EventsIndex 0 1000)INT16")
+  field(HOPR,    "50")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:Incr-I") {
+  field(DESC,    "EventsIncr")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_EventsIncr 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_EventsIncr 0 1000)INT16")
+  field(HOPR,    "50")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:Type-I") {
+  field(DESC,    "EventsType")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_EventsType 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_EventsType 0 1000)INT16")
+  field(HOPR,    "50")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:IX-I") {
+  field(DESC,    "Ev. IX Ary")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_EventIndex 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_EventIndex 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:Txt-I") {
+  field(DESC,    "EventsTxtNo")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_TextIndex 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_TextIndex 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:Typ-I") {
+  field(DESC,    "EventsDataType")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_DataType 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_DataType 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Evt:StartIX-I") {
+  field(DESC,    "EventsTextNo")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_StartIndex 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_StartIndex 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)-Dig}Cnt:Wf-I") {
+  field(DESC,    "CustSeq")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_SN 0 16)MODBUS_DATA")
+  field(INP,     "@asyn(INP_SN 0 1000)INT16")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record(ai,      "$(SYS1){$(DEV1)}Freq:Prf-I") {
+  field(DESC,   "T&i\\PrfRead")
+  field(EGU,    "Hz")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_PulseRepFreq 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_PulseRepFreq 0 1000)FLOAT32_LE")
+  field(HIHI,   "10")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "5")
+  field(HSV,    "MINOR")
+  field(LOW,    "-1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "2000")
+  field(LOPR,   "0")
+  field(PREC,   "1")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)}Time:State-I") {
+  field(DESC,   "State ready time:")
+  field(EGU,    "s")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SlowKlyTimeRemaining 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SlowKlyTimeRemaining 0 1000)FLOAT32_LE")
+  field(HIHI,   "3600")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "1800")
+  field(HSV,    "MINOR")
+  field(LOW,    "-1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "2000")
+  field(LOPR,   "0")
+  field(PREC,   "1")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CCPS}E:I") {
+  field(DESC,   "Ccps\\VoltSet")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_VoltSet 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_VoltSet 0 1000)FLOAT32_LE")
+  field(HIHI,   "1800")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "1500")
+  field(HSV,    "MINOR")
+  field(LOW,    "-1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "2000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)}Time:PW-I") {
+  field(DESC,   "Pulse Width")
+  field(EGU,    "us")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_PulseWidth 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_PulseWidth 0 1000)FLOAT32_LE")
+  field(HIHI,   "10")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "6")
+  field(HSV,    "MINOR")
+  field(LOW,    "-1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-PS:1}E:I") {
+  field(DESC,   "Ps1VoltRead")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_CCPS1VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_CCPS1VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "1500")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "1200")
+  field(HSV,    "MINOR")
+  field(LOW,    "0")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-FPS}I:I") {
+  field(DESC,   "Kly\FpsCurrRead")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_FastFilPsCurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_FastFilPsCurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "0")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-FPS}E:I") {
+  field(DESC,   "Kly\FpsVoltRead")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_FastFilPsVoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_FastFilPsVoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-IP:1}I:I") {
+  field(DESC,   "Ipc1CurrRead")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IonPsMonRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IonPsMonRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "7E-07")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "2E-07")
+  field(HSV,    "MINOR")
+  field(LOW,    "1E-10")
+  field(LSV,    "MINOR")
+  field(LOLO,   "1E-11")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1E-6")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-IP:1}E:I") {
+  field(DESC,   "Ipc1VoltRead")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IonPsVoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IonPsVoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "15E3")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "10E3")
+  field(HSV,    "MINOR")
+  field(LOW,    "3.2E3")
+  field(LSV,    "MINOR")
+  field(LOLO,   "3.1E3")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "15E3")
+  field(LOPR,   "0")
+  field(PREC,   "1")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-IP:1}P:I") {
+  field(DESC,   "Ipc1PressureRead")
+  field(EGU,    "Torr")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IonPsPressureRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IonPsPressureRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "2E-08")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "1.0E-08")
+  field(HSV,    "MINOR")
+  field(LOW,    "1E-12")
+  field(LSV,    "MINOR")
+  field(LOLO,   "1E-13")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1E-6")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)-IP:1}Flt:KlyVac-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:1}I:I") {
+  field(DESC,   "SPS1Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS1CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS1CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:1}E:I") {
+  field(DESC,   "SPS1Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS1VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS1VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "15")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "10")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:2}I:I") {
+  field(DESC,   "SPS2Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS2CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS2CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "35")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "30")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:2}E:I") {
+  field(DESC,   "SPS2Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS2VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS2VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:3}I:I") {
+  field(DESC,   "SPS3Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS3CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS3CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:3}E:I") {
+  field(DESC,   "SPS3Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS3VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS3VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "27")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "25")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:4}I:I") {
+  field(DESC,   "SPS4Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS4CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS4CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:4}E:I") {
+  field(DESC,   "SPS4Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS4VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS4VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "30")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "25")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:5}I:I") {
+  field(DESC,   "SPS5Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS5CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS5CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:5}E:I") {
+  field(DESC,   "SPS5Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS5VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS5VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:6}I:I") {
+  field(DESC,   "SPS6Current")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS6CurrRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS6CurrRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "15")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "10")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-SPS:6}E:I") {
+  field(DESC,   "SPS6Voltage")
+  field(EGU,    "V")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_SPS6VoltRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_SPS6VoltRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "6")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "5")
+  field(HSV,    "MINOR")
+  field(LOW,    "2")
+  field(LSV,    "MINOR")
+  field(LOLO,   "1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CT}I:I") {
+  field(DESC,   "Tank\\DigiCt")
+  field(EGU,    "A")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBCtRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBCtRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "500")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "400")
+  field(HSV,    "MINOR")
+  field(LOW,    "10")
+  field(LSV,    "MINOR")
+  field(LOLO,   "1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CVD}E:I") {
+  field(DESC,   "Tank\\DigiCvd")
+  field(EGU,    "kV")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBCvdRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBCvdRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "400")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "310")
+  field(HSV,    "MINOR")
+  field(LOW,    "10")
+  field(LSV,    "MINOR")
+  field(LOLO,   "1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)}Time:Fwhm-I") {
+  field(DESC,   "Tank\\DigiFwhm")
+  field(EGU,    "us")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBFwhmRead 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBFwhmRead 0 1000)FLOAT32_LE")
+  field(HIHI,   "10")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "6")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0.1")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Oil}T:I") {
+  field(DESC,   "OilTempRead")
+  field(EGU,    "C")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBOilTemperature 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBOilTemperature 0 1000)FLOAT32_LE")
+  field(HIHI,   "40")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "35")
+  field(HSV,    "MINOR")
+  field(LOW,    "20")
+  field(LSV,    "MINOR")
+  field(LOLO,   "15")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Oil}L:I") {
+  field(DESC,   "OilLevRead")
+  field(EGU,    "mm")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBOilLevel 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBOilLevel 0 1000)FLOAT32_LE")
+  field(HIHI,   "1")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "0")
+  field(HSV,    "MINOR")
+  field(LOW,    "-30")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-50")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Coll}T:Fwd-I") {
+  field(DESC,   "CollFwdTempRead")
+  field(EGU,    "C")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBCollInletTemp 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBCollInletTemp 0 1000)FLOAT32_LE")
+  field(HIHI,   "55")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "50")
+  field(HSV,    "MINOR")
+  field(LOW,    "25")
+  field(LSV,    "MINOR")
+  field(LOLO,   "20")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Coll}T:Rtn-I") {
+  field(DESC,   "Cool\\CollRtnTemp")
+  field(EGU,    "C")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBCollOutletTemp 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBCollOutletTemp 0 1000)FLOAT32_LE")
+  field(HIHI,   "55")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "50")
+  field(HSV,    "MINOR")
+  field(LOW,    "25")
+  field(LSV,    "MINOR")
+  field(LOLO,   "20")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Bdy}T:Fwd-I") {
+  field(DESC,   "BodyFwdTempRead")
+  field(EGU,    "C")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBBodyInletTemp 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBBodyInletTemp 0 1000)FLOAT32_LE")
+  field(HIHI,   "55")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "50")
+  field(HSV,    "MINOR")
+  field(LOW,    "25")
+  field(LSV,    "MINOR")
+  field(LOLO,   "20")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Bdy}T:Rtn-I") {
+  field(DESC,   "BodyRtnTempRead")
+  field(EGU,    "C")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBBodyOutletTemp 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBBodyOutletTemp 0 1000)FLOAT32_LE")
+  field(HIHI,   "55")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "50")
+  field(HSV,    "MINOR")
+  field(LOW,    "25")
+  field(LSV,    "MINOR")
+  field(LOLO,   "20")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)}Val:Logf-I") {
+  field(DESC,   "LOG val float")
+  field(EGU,    "")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_LOG_DataValueFloat 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_LOG_DataValueFloat 0 1000)FLOAT32_LE")
+  field(HIHI,   "10000")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "1000")
+  field(HSV,    "MINOR")
+  field(LOW,    "1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "0")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CCPS}F:1-I") {
+  field(DESC,   "CcpsSuFlow1")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow1 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow1 0 1000)FLOAT32_LE")
+  field(HIHI,   "20")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "15")
+  field(HSV,    "MINOR")
+  field(LOW,    "5")
+  field(LSV,    "MINOR")
+  field(LOLO,   "2")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CCPS}F:2-I") {
+  field(DESC,   "CcpsSuFlow2")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow2 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow2 0 1000)FLOAT32_LE")
+  field(HIHI,   "20")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "15")
+  field(HSV,    "MINOR")
+  field(LOW,    "5")
+  field(LSV,    "MINOR")
+  field(LOLO,   "2")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-CCPS}F:3-I") {
+  field(DESC,   "CcpsSuFlow3")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow3 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow3 0 1000)FLOAT32_LE")
+  field(HIHI,   "20")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "15")
+  field(HSV,    "MINOR")
+  field(LOW,    "5")
+  field(LSV,    "MINOR")
+  field(LOLO,   "2")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Win}F:I") {
+  field(DESC,   "WinFlow")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow4 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow4 0 1000)FLOAT32_LE")
+  field(HIHI,   "20")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "15")
+  field(HSV,    "MINOR")
+  field(LOW,    "5")
+  field(LSV,    "MINOR")
+  field(LOLO,   "2")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Sol}F:I") {
+  field(DESC,   "SolFlow")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow5 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow5 0 1000)FLOAT32_LE")
+  field(HIHI,   "25")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "20")
+  field(HSV,    "MINOR")
+  field(LOW,    "10")
+  field(LSV,    "MINOR")
+  field(LOLO,   "5")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Bdy}F:I") {
+  field(DESC,   "BodCollFlow")
+  field(EGU,    "l/m")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFB_Flow6 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFB_Flow6 0 1000)FLOAT32_LE")
+  field(HIHI,   "50")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "45")
+  field(HSV,    "MINOR")
+  field(LOW,    "10")
+  field(LSV,    "MINOR")
+  field(LOLO,   "5")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record(ai,      "$(SYS1){$(DEV1)-Bdy}Pwr:Loss-I") {
+  field(DESC,   "FlowPwrBdy")
+  field(EGU,    "kW")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask(INP_IFBBdyPwrLoss 0 32)MODBUS_DATA")
+  field(INP,    "@asyn(INP_IFBBdyPwrLoss 0 1000)FLOAT32_LE")
+  field(HIHI,   "120")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "100")
+  field(HSV,    "MINOR")
+  field(LOW,    "-1")
+  field(LSV,    "MINOR")
+  field(LOLO,   "-2")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "1000")
+  field(LOPR,   "0")
+  field(PREC,   "2")
+  field(SCAN,   "1 second")
+  field(FLNK,   "$(SYS1){$(DEV1)}Val:Dmy-Calc")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Cnt:Log-I") {
+  field(DESC,    "LOG counter")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_Counter 0 32)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_Counter 0 1000)INT32_LE")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record (ai,      "$(SYS1){$(DEV1)}Val:Log32-I") {
+  field(DESC,    "LOG val int32")
+# field(EGU,     "")
+  field(DTYP,    "asynInt32")
+# field(INP,     "@asynMask(INP_LOG_DataValueInt32 0 32)MODBUS_DATA")
+  field(INP,     "@asyn(INP_LOG_DataValueInt32 0 1000)INT32_LE")
+  field(HOPR,    "1000")
+  field(LOPR,    "0")
+  field(PREC,    "0")
+  field(SCAN,    "1 second")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:IX-Wf") {
+  field(DESC,    "Wf Log Evt IX")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_EventIndex 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S00IX-Calc")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:Txt-Wf") {
+  field(DESC,    "Wf Log Txt IX")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_TextIndex 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:N00IX-Calc")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:DTyp-Wf") {
+  field(DESC,    "Wf Log Data Type")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_DataType 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:Dmy-SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}Cnt:LogInc-Wf") {
+  field(DESC,    "Wf Log Incr.")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_Increment 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:Dmy-SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:Typ-Wf") {
+  field(DESC,    "Wf Log Event Type.")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_EventType 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:IL00IX-Calc")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Stat1-Wf") {
+  field(DESC,    "Wf SSM State")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Stat1 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:0}State:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Sts1-Wf") {
+  field(DESC,    "Wf SSM Status")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Sts1 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:0}Sts:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Stat2-Wf") {
+  field(DESC,    "Wf SSM State")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Stat2 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:64}State:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Sts2-Wf") {
+  field(DESC,    "Wf SSM Status")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Sts2 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:64}Sts:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Stat3-Wf") {
+  field(DESC,    "Wf SSM State")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Stat3 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:128}State:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Sts3-Wf") {
+  field(DESC,    "Wf SSM Status")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Sts3 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:128}Sts:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Stat4-Wf") {
+  field(DESC,    "Wf SSM State")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Stat4 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:192}State:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:Sts4-Wf") {
+  field(DESC,    "Wf SSM Status")
+  field(FTVL,    "ULONG")
+  field(NELM,    "256")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_MX_Wave_Sts4 0 1000)INT16")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)-SSM:192}Sts:SubA")
+}
+
+
+record(waveform, "$(SYS1){$(DEV1)}DI:00-Wf") {
+  field(DESC,    "Digitizer Wf 00")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave00 0 1000)UINT16")
+  field(SCAN,    "1 second")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:01-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:00Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:00Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 00")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:00-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:00B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:00Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:00-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:00B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:00B-Wf") {
+  field(DESC,    "Support Wf 00")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:01-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:01-Wf") {
+  field(DESC,    "Digitizer Wf 01")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave01 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:02-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:01Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:01Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 01")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:01-Wf")
+##  field(INPA,    "-20.0")
+##  field(INPB,    "0")
+##  field(INPC,    "36000")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:01B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:01Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:01-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:01B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:01B-Wf") {
+  field(DESC,    "Support Wf 01")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:02-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:02-Wf") {
+  field(DESC,    "Digitizer Wf 02")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave02 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:03-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:02Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:02Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 02")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:02-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:02B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:02Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:02-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:02B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:02B-Wf") {
+  field(DESC,    "Support Wf 02")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:03-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:03-Wf") {
+  field(DESC,    "Digitizer Wf 03")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave03 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:04-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:03Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:03Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 03")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:03-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:03B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:03Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:03-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:03B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:03B-Wf") {
+  field(DESC,    "Support Wf 03")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:04-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:04-Wf") {
+  field(DESC,    "Digitizer Wf 04")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave04 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:05-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:04Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:04Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 04")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:04-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:04B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:04Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:04-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:04B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:04B-Wf") {
+  field(DESC,    "Support Wf 04")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:05-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:05-Wf") {
+  field(DESC,    "Digitizer Wf 05")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave05 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:06-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:05Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:05Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 05")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:05-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:05B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:05Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:05-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:05B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:05B-Wf") {
+  field(DESC,    "Support Wf 05")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:06-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:06-Wf") {
+  field(DESC,    "Digitizer Wf 06")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave06 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:07-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:06Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:06Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 06")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:06-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:06B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:06Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:06-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:06B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:06B-Wf") {
+  field(DESC,    "Support Wf 06")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:07-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}DI:07-Wf") {
+  field(DESC,    "Digitizer Wf 07")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_DI_Wave07 0 1000)UINT16")
+  field(SCAN,    "Passive")
+#  field(FLNK,    "$(SYS1){$(DEV1)}DI:08-Wf")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:07Wf-Calc")
+}
+
+record(ao,       "$(SYS1){$(DEV1)}Val:K-SP") {
+  field(VAL,     "65535")
+  field(PINI,    "YES")
+  }
+
+##record(acalcout, "$(SYS1){$(DEV1)}DI:07Wf-Calc") {
+##  field(DESC,    "Support CALC for testing 07")
+#### field(CALC,    "IX*A+64*B+C")
+##  field(CALC,    "AA&D")
+##  field(NELM,    "64")
+##  field(NUSE,    "64")
+##  field(INAA,    "$(SYS1){$(DEV1)}DI:07-Wf")
+##  field(INPA,    "0.0")
+##  field(INPB,    "0")
+##  field(INPC,    "0")
+##  field(INPD,    "65535")
+##  field(OUT,     "$(SYS1){$(DEV1)}DI:07B-Wf PP")
+##}
+
+record(aSub,     "$(SYS1){$(DEV1)}DI:07Wf-Calc") {
+  field(SNAM,    "acalcaSubProc")
+  field(FTA ,    "ULONG")
+  field(FTVA ,   "ULONG")
+  field(NOA ,    "64")
+  field(NOVA,    "64")
+  field(INPA,    "$(SYS1){$(DEV1)}DI:07-Wf")
+  field(INPB,    "$(SYS1){$(DEV1)}Val:K-SP")
+  field(OUTA,    "$(SYS1){$(DEV1)}DI:07B-Wf  PP")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}DI:07B-Wf") {
+  field(DESC,    "Support Wf 07")
+  field(FTVL,    "ULONG")
+  field(NELM,    "64")
+  field(FLNK,    "$(SYS1){$(DEV1)}DI:08-Wf")
+}
+record(waveform, "$(SYS1){$(DEV1)}Evt:Log32-Wf") {
+  field(DESC,    "Wf Log Int32 Data")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_DataInt32 0 1000)INT32_LE")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:Dmy-SubA")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:TrigID-Wf") {
+  field(DESC,    "Wf Log Trigger ID")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_TrigID 0 1000)INT32_LE")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID00IX-Calc")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Time:TS1-Wf") {
+  field(DESC,    "Wf 1 Log TS")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_Timestamp_1 0 1000)INT32_LE")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS-Calc")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Time:TS2-Wf") {
+  field(DESC,    "Wf 2 Log TS")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+  field(INP,     "@asyn(INP_LOG_Wave_Timestamp_2 0 1000)INT32_LE")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS-Calc")
+}
+
+record(waveform, "$(SYS1){$(DEV1)}Evt:Logf-Wf") {
+  field(DESC,    "Wf Log Float Data")
+  field(FTVL,    "ULONG")
+  field(NELM,    "50")
+  field(DTYP,    "asynInt32ArrayIn")
+# field(DTYP,    "asynFloat64")
+  field(INP,     "@asyn(INP_LOG_Wave_DataFloat 0 1000)FLOAT32_LE")
+  field (PREC,   "2")
+  field(SCAN,    "1 second")
+  field(FLNK,    "$(SYS1){$(DEV1)}Val:I00IX-Calc")
+}
+

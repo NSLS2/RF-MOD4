@@ -1,0 +1,3100 @@
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS100IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "00")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS100-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS100-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS100-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS100-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS100-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS101IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS101IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS100IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS101-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS101-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS101-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS101-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS101-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS00cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS00cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS100-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS101-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS00Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS00Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS102IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS102IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "01")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS102-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS102-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS102-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS102-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS102-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS103IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS103IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS102IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS103-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS103-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS103-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS103-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS103-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS01cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS01cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS102-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS103-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS01Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS01Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS104IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS104IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "02")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS104-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS104-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS104-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS104-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS104-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS105IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS105IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS104IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS105-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS105-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS105-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS105-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS105-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS02cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS02cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS104-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS105-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS02Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS02Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS106IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS106IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "03")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS106-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS106-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS106-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS106-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS106-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS107IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS107IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS106IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS107-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS107-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS107-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS107-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS107-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS03cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS03cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS106-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS107-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS03Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS03Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS108IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS108IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "04")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS108-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS108-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS108-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS108-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS108-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS109IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS109IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS108IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS109-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS109-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS109-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS109-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS109-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS04cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS04cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS108-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS109-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS04Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS04Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS110IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS110IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "05")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS110-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS110-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS110-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS110-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS110-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS111IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS111IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS110IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS111-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS111-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS111-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS111-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS111-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS05cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS05cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS110-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS111-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS05Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS05Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS112IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS112IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "06")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS112-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS112-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS112-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS112-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS112-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS113IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS113IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS112IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS113-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS113-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS113-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS113-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS113-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS06cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS06cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS112-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS113-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS06Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS06Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS114IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS114IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "07")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS114-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS114-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS114-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS114-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS114-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS115IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS115IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS114IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS115-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS115-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS115-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS115-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS115-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS07cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS07cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS114-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS115-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS07Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS07Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS116IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS116IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "08")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS116-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS116-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS116-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS116-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS116-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS117IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS117IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS116IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS117-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS117-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS117-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS117-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS117-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS08cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS08cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS116-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS117-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS08Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS08Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS118IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS118IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "09")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS118-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS118-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS118-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS118-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS118-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS119IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS119IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS118IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS119-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS119-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS119-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS119-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS119-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS09cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS09cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS118-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS119-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS09Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS09Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS120IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS120IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "10")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS120-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS120-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS120-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS120-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS120-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS121IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS121IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS120IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS121-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS121-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS121-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS121-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS121-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS10cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS10cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS120-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS121-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS10Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS10Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS122IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS122IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "11")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS122-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS122-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS122-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS122-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS122-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS123IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS123IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS122IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS123-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS123-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS123-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS123-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS123-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS11cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS11cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS122-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS123-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS11Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS11Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS124IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS124IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "12")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS124-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS124-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS124-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS124-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS124-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS125IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS125IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS124IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS125-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS125-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS125-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS125-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS125-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS12cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS12cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS124-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS125-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS12Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS12Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS126IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS126IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "13")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS126-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS126-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS126-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS126-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS126-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS127IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS127IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS126IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS127-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS127-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS127-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS127-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS127-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS13cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS13cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS126-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS127-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS13Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS13Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS128IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS128IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "14")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS128-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS128-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS128-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS128-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS128-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS129IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS129IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS128IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS129-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS129-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS129-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS129-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS129-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS14cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS14cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS128-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS129-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS14Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS14Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS130IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS130IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "15")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS130-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS130-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS130-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS130-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS130-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS131IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS131IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS130IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS131-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS131-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS131-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS131-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS131-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS15cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS15cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS130-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS131-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS15Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS15Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS132IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS132IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "16")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS132-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS132-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS132-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS132-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS132-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS133IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS133IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS132IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS133-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS133-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS133-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS133-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS133-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS16cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS16cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS132-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS133-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS16Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS16Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS134IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS134IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "17")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS134-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS134-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS134-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS134-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS134-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS135IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS135IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS134IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS135-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS135-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS135-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS135-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS135-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS17cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS17cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS134-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS135-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS17Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS17Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS136IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS136IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "18")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS136-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS136-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS136-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS136-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS136-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS137IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS137IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS136IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS137-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS137-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS137-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS137-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS137-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS18cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS18cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS136-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS137-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS18Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS18Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS138IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS138IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "19")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS138-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS138-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS138-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS138-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS138-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS139IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS139IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS138IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS139-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS139-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS139-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS139-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS139-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS19cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS19cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS138-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS139-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS19Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS19Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS140IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS140IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "20")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS140-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS140-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS140-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS140-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS140-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS141IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS141IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS140IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS141-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS141-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS141-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS141-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS141-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS20cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS20cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS140-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS141-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS20Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS20Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS142IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS142IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "21")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS142-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS142-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS142-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS142-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS142-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS143IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS143IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS142IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS143-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS143-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS143-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS143-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS143-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS21cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS21cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS142-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS143-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS21Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS21Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS144IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS144IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "22")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS144-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS144-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS144-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS144-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS144-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS145IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS145IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS144IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS145-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS145-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS145-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS145-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS145-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS22cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS22cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS144-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS145-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS22Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS22Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS146IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS146IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "23")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS146-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS146-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS146-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS146-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS146-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS147IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS147IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS146IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS147-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS147-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS147-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS147-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS147-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS23cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS23cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS146-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS147-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS23Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS23Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS148IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS148IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "24")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS148-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS148-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS148-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS148-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS148-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS149IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS149IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS148IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS149-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS149-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS149-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS149-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS149-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS24cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS24cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS148-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS149-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS24Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS24Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS150IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS150IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "25")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS150-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS150-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS150-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS150-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS150-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS151IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS151IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS150IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS151-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS151-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS151-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS151-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS151-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS25cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS25cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS150-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS151-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS25Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS25Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS152IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS152IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "26")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS152-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS152-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS152-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS152-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS152-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS153IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS153IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS152IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS153-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS153-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS153-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS153-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS153-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS26cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS26cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS152-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS153-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS26Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS26Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS154IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS154IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "27")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS154-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS154-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS154-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS154-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS154-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS155IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS155IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS154IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS155-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS155-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS155-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS155-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS155-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS27cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS27cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS154-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS155-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS27Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS27Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS156IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS156IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "28")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS156-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS156-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS156-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS156-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS156-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS157IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS157IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS156IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS157-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS157-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS157-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS157-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS157-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS28cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS28cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS156-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS157-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS28Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS28Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS158IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS158IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "29")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS158-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS158-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS158-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS158-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS158-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS159IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS159IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS158IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS159-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS159-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS159-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS159-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS159-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS29cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS29cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS158-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS159-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS29Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS29Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS160IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS160IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "30")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS160-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS160-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS160-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS160-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS160-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS161IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS161IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS160IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS161-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS161-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS161-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS161-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS161-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS30cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS30cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS160-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS161-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS30Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS30Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS162IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS162IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "31")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS162-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS162-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS162-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS162-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS162-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS163IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS163IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS162IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS163-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS163-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS163-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS163-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS163-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS31cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS31cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS162-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS163-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS31Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS31Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS164IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS164IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "32")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS164-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS164-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS164-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS164-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS164-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS165IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS165IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS164IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS165-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS165-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS165-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS165-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS165-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS32cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS32cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS164-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS165-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS32Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS32Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS166IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS166IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "33")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS166-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS166-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS166-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS166-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS166-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS167IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS167IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS166IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS167-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS167-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS167-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS167-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS167-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS33cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS33cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS166-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS167-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS33Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS33Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS168IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS168IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "34")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS168-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS168-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS168-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS168-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS168-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS169IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS169IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS168IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS169-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS169-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS169-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS169-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS169-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS34cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS34cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS168-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS169-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS34Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS34Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS170IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS170IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "35")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS170-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS170-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS170-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS170-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS170-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS171IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS171IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS170IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS171-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS171-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS171-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS171-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS171-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS35cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS35cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS170-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS171-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS35Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS35Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS172IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS172IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "36")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS172-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS172-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS172-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS172-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS172-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS173IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS173IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS172IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS173-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS173-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS173-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS173-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS173-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS36cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS36cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS172-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS173-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS36Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS36Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS174IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS174IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "37")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS174-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS174-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS174-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS174-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS174-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS175IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS175IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS174IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS175-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS175-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS175-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS175-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS175-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS37cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS37cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS174-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS175-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS37Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS37Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS176IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS176IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "38")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS176-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS176-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS176-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS176-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS176-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS177IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS177IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS176IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS177-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS177-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS177-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS177-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS177-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS38cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS38cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS176-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS177-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS38Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS38Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS178IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS178IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "39")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS178-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS178-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS178-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS178-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS178-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS179IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS179IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS178IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS179-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS179-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS179-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS179-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS179-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS39cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS39cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS178-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS179-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS39Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS39Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS180IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS180IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "40")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS180-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS180-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS180-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS180-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS180-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS181IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS181IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS180IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS181-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS181-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS181-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS181-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS181-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS40cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS40cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS180-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS181-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS40Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS40Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS182IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS182IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "41")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS182-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS182-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS182-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS182-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS182-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS183IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS183IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS182IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS183-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS183-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS183-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS183-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS183-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS41cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS41cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS182-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS183-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS41Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS41Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS184IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS184IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "42")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS184-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS184-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS184-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS184-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS184-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS185IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS185IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS184IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS185-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS185-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS185-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS185-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS185-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS42cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS42cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS184-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS185-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS42Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS42Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS186IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS186IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "43")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS186-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS186-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS186-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS186-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS186-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS187IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS187IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS186IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS187-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS187-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS187-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS187-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS187-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS43cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS43cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS186-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS187-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS43Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS43Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS188IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS188IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "44")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS188-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS188-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS188-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS188-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS188-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS189IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS189IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS188IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS189-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS189-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS189-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS189-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS189-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS44cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS44cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS188-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS189-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS44Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS44Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS190IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS190IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "45")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS190-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS190-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS190-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS190-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS190-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS191IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS191IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS190IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS191-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS191-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS191-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS191-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS191-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS45cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS45cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS190-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS191-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS45Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS45Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS192IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS192IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "46")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS192-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS192-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS192-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS192-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS192-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS193IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS193IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS192IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS193-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS193-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS193-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS193-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS193-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS46cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS46cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS192-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS193-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS46Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS46Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS194IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS194IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "47")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS194-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS194-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS194-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS194-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS194-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS195IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS195IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS194IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS195-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS195-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS195-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS195-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS195-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS47cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS47cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS194-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS195-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS47Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS47Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS196IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS196IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "48")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS196-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS196-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS196-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS196-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS196-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS197IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS197IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS196IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS197-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS197-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS197-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS197-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS197-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS48cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS48cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS196-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS197-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS48Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS48Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS198IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS198IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "49")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?2*(A-B+C):2*(A-B)")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS198-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS198-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS198-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS198-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS198-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS199IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}Time:TS199IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS198IX-Calc" )
+  field(CALC,    "A+1")
+  field(OUT,     "$(SYS1){$(DEV1)}Time:TS199-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Time:TS199-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "100") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS199-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Time:TS199-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:TS199-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS49cv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)}Time:TS49cv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)}Time:TS198-I")
+  field(INPB,    "$(SYS1){$(DEV1)}Time:TS199-I")
+  field(OUTA,    "$(SYS1){$(DEV1)}Val:TS49Out PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}Val:TS49Out") {
+  field(FLNK,    "$(SYS1){$(DEV1)}Time:TS1100IX-Calc")
+}
+

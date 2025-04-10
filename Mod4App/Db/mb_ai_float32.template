@@ -1,0 +1,22 @@
+record(ai,      "$(SYS){$(DEV1)$(DEV2)}$(REC)") {
+  field(DESC,   "$(DESC)")
+  field(EGU,    "$(EGU)")
+  #field(EGU,   "x")
+  field(DTYP,   "asynFloat64")
+  #field(INP,   "@asynMask($(INP) $(OFFSET) $(TYPE))MODBUS_DATA")
+  field(INP,    "@asyn($(INP) $(OFFSET) 1000)FLOAT32_LE")
+  field(HIHI,   "$(HIHI)")
+  field(HHSV,   "MAJOR")
+  field(HIGH,   "$(HIGH)")
+  field(HSV,    "MINOR")
+  field(LOW,    "$(LOW)")
+  field(LSV,    "MINOR")
+  field(LOLO,   "$(LOLO)")
+  field(LLSV,   "MAJOR")
+  field(HOPR,   "$(HOPR)")
+  field(LOPR,   "$(LOPR)")
+  field(PREC,   "$(PREC)")
+  field(SCAN,   "$(SCAN)")
+  field(FLNK,   "$(SYS){$(DEV1)$(DEV3)}$(FLK)")
+}
+

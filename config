@@ -1,0 +1,10 @@
+NAME=RF-MOD4
+
+PORT=4052
+
+USER=softioc
+
+HOST=rfctrl01-vm
+
+CHDIR="$CHDIR/iocBoot/iocMod4"
+EXEC="$CHDIR/st.cmd"

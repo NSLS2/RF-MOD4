@@ -1,0 +1,1100 @@
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T00-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St00-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T00-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt00-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT00-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt00-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T00-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T00-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T01-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T01-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St01-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T01-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt01-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT01-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt01-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T01-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T01-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T02-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T02-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St02-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T02-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt02-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT02-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt02-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T02-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T02-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T03-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T03-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St03-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T03-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt03-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT03-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt03-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T03-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T03-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T04-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T04-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St04-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T04-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt04-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT04-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt04-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T04-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T04-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T05-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T05-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St05-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T05-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt05-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT05-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt05-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T05-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T05-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T06-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T06-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St06-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T06-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt06-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT06-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt06-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T06-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T06-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T07-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T07-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St07-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T07-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt07-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT07-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt07-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T07-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T07-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T08-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T08-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St08-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T08-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt08-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT08-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt08-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T08-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T08-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T09-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T09-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St09-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T09-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt09-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT09-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt09-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T09-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T09-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T10-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T10-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St10-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T10-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt10-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT10-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt10-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T10-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T10-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T11-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T11-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St11-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T11-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt11-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT11-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt11-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T11-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T11-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T12-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T12-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St12-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T12-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt12-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT12-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt12-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T12-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T12-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T13-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T13-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St13-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T13-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt13-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT13-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt13-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T13-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T13-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T14-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T14-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St14-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T14-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt14-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT14-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt14-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T14-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T14-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T15-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T15-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St15-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T15-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt15-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT15-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt15-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T15-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T15-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T16-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T16-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St16-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T16-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt16-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT16-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt16-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T16-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T16-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T17-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T17-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St17-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T17-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt17-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT17-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt17-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T17-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T17-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T18-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T18-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St18-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T18-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt18-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT18-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt18-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T18-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T18-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T19-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T19-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St19-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T19-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt19-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT19-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt19-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T19-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T19-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T20-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T20-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St20-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T20-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt20-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT20-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt20-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T20-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T20-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T21-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T21-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St21-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T21-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt21-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT21-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt21-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T21-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T21-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T22-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T22-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St22-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T22-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt22-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT22-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt22-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T22-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T22-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T23-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T23-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St23-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T23-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt23-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT23-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt23-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T23-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T23-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T24-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T24-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St24-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T24-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt24-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT24-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt24-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T24-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T24-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T25-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T25-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St25-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T25-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt25-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT25-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt25-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T25-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T25-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T26-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T26-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St26-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T26-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt26-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT26-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt26-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T26-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T26-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T27-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T27-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St27-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T27-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt27-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT27-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt27-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T27-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T27-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T28-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T28-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St28-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T28-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt28-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT28-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt28-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T28-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T28-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T29-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T29-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St29-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T29-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt29-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT29-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt29-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T29-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T29-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T30-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T30-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St30-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T30-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt30-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT30-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt30-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T30-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T30-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T31-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T31-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St31-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T31-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt31-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT31-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt31-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T31-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T31-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T32-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T32-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St32-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T32-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt32-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT32-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt32-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T32-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T32-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T33-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T33-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St33-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T33-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt33-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT33-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt33-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T33-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T33-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T34-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T34-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St34-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T34-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt34-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT34-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt34-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T34-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T34-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T35-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T35-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St35-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T35-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt35-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT35-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt35-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T35-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T35-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T36-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T36-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St36-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T36-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt36-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT36-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt36-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T36-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T36-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T37-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T37-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St37-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T37-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt37-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT37-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt37-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T37-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T37-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T38-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T38-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St38-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T38-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt38-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT38-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt38-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T38-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T38-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T39-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T39-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St39-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T39-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt39-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT39-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt39-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T39-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T39-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T40-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T40-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St40-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T40-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt40-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT40-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt40-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T40-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T40-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T41-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T41-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St41-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T41-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt41-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT41-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt41-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T41-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T41-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T42-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T42-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St42-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T42-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt42-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT42-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt42-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T42-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T42-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T43-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T43-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St43-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T43-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt43-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT43-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt43-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T43-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T43-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T44-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T44-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St44-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T44-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt44-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT44-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt44-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T44-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T44-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T45-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T45-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St45-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T45-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt45-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT45-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt45-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T45-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T45-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T46-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T46-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St46-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T46-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt46-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT46-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt46-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T46-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T46-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T47-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T47-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St47-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T47-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt47-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT47-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt47-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T47-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T47-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T48-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T48-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St48-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T48-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt48-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT48-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt48-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T48-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T48-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:T49-Calc_")
+}
+record(scalcout,  "$(SYS1){$(DEV1)}ID:T49-Calc_") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE, WARN or IL text:")
+# State event type = 0 (AA)
+# Warning event type = 1 (BB)
+# Interlock event type = 2 (CC)
+# Error = 3 (DD)
+# Parameter = 4 (EE)
+# Message event type = 5 (FF)
+  field(CALC,     "A==5?FF:(A==2?CC:(A==1?BB:AA))")
+  field(INPA,     "$(SYS1){$(DEV1)}ID:St49-Calc")
+  field(INAA,     "$(SYS1){$(DEV1)}ID:T49-I_")
+  field(INBB,     "$(SYS1){$(DEV1)}ID:Wt49-I_")
+  field(INCC,     "$(SYS1){$(DEV1)}ID:ILT49-I_")
+  field(INFF,     "$(SYS1){$(DEV1)}ID:Mt49-I_")
+  field(OUT,      "$(SYS1){$(DEV1)}ID:T49-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)}ID:T49-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)}ID:N50IX-Calc")
+}

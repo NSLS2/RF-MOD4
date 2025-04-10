@@ -1,0 +1,54 @@
+file logEntryEvData.template {
+    pattern
+    {SYS1      DEV1     RN       INInt         INFlt          N    NXT}
+    {\$(SYS1) \$(DEV1)  Val:I00  Evt:Log32-Wf  Evt:Log32-Wf   0    Val:I01IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I01  Evt:Log32-Wf  Evt:Log32-Wf   1    Val:I02IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I02  Evt:Log32-Wf  Evt:Log32-Wf   2    Val:I03IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I03  Evt:Log32-Wf  Evt:Log32-Wf   3    Val:I04IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I04  Evt:Log32-Wf  Evt:Log32-Wf   4    Val:I05IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I05  Evt:Log32-Wf  Evt:Log32-Wf   5    Val:I06IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I06  Evt:Log32-Wf  Evt:Log32-Wf   6    Val:I07IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I07  Evt:Log32-Wf  Evt:Log32-Wf   7    Val:I08IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I08  Evt:Log32-Wf  Evt:Log32-Wf   8    Val:I09IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I09  Evt:Log32-Wf  Evt:Log32-Wf   9    Val:I10IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I10  Evt:Log32-Wf  Evt:Log32-Wf  10    Val:I11IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I11  Evt:Log32-Wf  Evt:Log32-Wf  11    Val:I12IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I12  Evt:Log32-Wf  Evt:Log32-Wf  12    Val:I13IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I13  Evt:Log32-Wf  Evt:Log32-Wf  13    Val:I14IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I14  Evt:Log32-Wf  Evt:Log32-Wf  14    Val:I15IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I15  Evt:Log32-Wf  Evt:Log32-Wf  15    Val:I16IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I16  Evt:Log32-Wf  Evt:Log32-Wf  16    Val:I17IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I17  Evt:Log32-Wf  Evt:Log32-Wf  17    Val:I18IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I18  Evt:Log32-Wf  Evt:Log32-Wf  18    Val:I19IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I19  Evt:Log32-Wf  Evt:Log32-Wf  19    Val:I20IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I20  Evt:Log32-Wf  Evt:Log32-Wf  20    Val:I21IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I21  Evt:Log32-Wf  Evt:Log32-Wf  21    Val:I22IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I22  Evt:Log32-Wf  Evt:Log32-Wf  22    Val:I23IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I23  Evt:Log32-Wf  Evt:Log32-Wf  23    Val:I24IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I24  Evt:Log32-Wf  Evt:Log32-Wf  24    Val:I25IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I25  Evt:Log32-Wf  Evt:Log32-Wf  25    Val:I26IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I26  Evt:Log32-Wf  Evt:Log32-Wf  26    Val:I27IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I27  Evt:Log32-Wf  Evt:Log32-Wf  27    Val:I28IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I28  Evt:Log32-Wf  Evt:Log32-Wf  28    Val:I29IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I29  Evt:Log32-Wf  Evt:Log32-Wf  29    Val:I30IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I30  Evt:Log32-Wf  Evt:Log32-Wf  30    Val:I31IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I31  Evt:Log32-Wf  Evt:Log32-Wf  31    Val:I32IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I32  Evt:Log32-Wf  Evt:Log32-Wf  32    Val:I33IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I33  Evt:Log32-Wf  Evt:Log32-Wf  33    Val:I34IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I34  Evt:Log32-Wf  Evt:Log32-Wf  34    Val:I35IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I35  Evt:Log32-Wf  Evt:Log32-Wf  35    Val:I36IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I36  Evt:Log32-Wf  Evt:Log32-Wf  36    Val:I37IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I37  Evt:Log32-Wf  Evt:Log32-Wf  37    Val:I38IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I38  Evt:Log32-Wf  Evt:Log32-Wf  38    Val:I39IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I39  Evt:Log32-Wf  Evt:Log32-Wf  39    Val:I40IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I40  Evt:Log32-Wf  Evt:Log32-Wf  40    Val:I41IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I41  Evt:Log32-Wf  Evt:Log32-Wf  41    Val:I42IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I42  Evt:Log32-Wf  Evt:Log32-Wf  42    Val:I43IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I43  Evt:Log32-Wf  Evt:Log32-Wf  43    Val:I44IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I44  Evt:Log32-Wf  Evt:Log32-Wf  44    Val:I45IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I45  Evt:Log32-Wf  Evt:Log32-Wf  45    Val:I46IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I46  Evt:Log32-Wf  Evt:Log32-Wf  46    Val:I47IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I47  Evt:Log32-Wf  Evt:Log32-Wf  47    Val:I48IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I48  Evt:Log32-Wf  Evt:Log32-Wf  48    Val:I49IX-Calc }
+    {\$(SYS1) \$(DEV1)  Val:I49  Evt:Log32-Wf  Evt:Log32-Wf  49    ID:N50IX-Calc  }
+    }

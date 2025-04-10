@@ -1,0 +1,2200 @@
+record(calcout,  "$(SYS1){$(DEV1)}ID:S00IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "0")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S00-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S00-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St00-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St00-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S00-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St00-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St00-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St00-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St00-I")
+{    
+  field(DESC,    "Log entry 0 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St00-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S01IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S01IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "1")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S01-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S01-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St01-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St01-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S01-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St01-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St01-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St01-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St01-I")
+{    
+  field(DESC,    "Log entry 1 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St01-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S02IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S02IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "2")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S02-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S02-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St02-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St02-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S02-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St02-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St02-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St02-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St02-I")
+{    
+  field(DESC,    "Log entry 2 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St02-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S03IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S03IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "3")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S03-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S03-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St03-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St03-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S03-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St03-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St03-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St03-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St03-I")
+{    
+  field(DESC,    "Log entry 3 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St03-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S04IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S04IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "4")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S04-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S04-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St04-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St04-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S04-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St04-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St04-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St04-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St04-I")
+{    
+  field(DESC,    "Log entry 4 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St04-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S05IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S05IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "5")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S05-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S05-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St05-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St05-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S05-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St05-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St05-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St05-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St05-I")
+{    
+  field(DESC,    "Log entry 5 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St05-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S06IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S06IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "6")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S06-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S06-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St06-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St06-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S06-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St06-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St06-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St06-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St06-I")
+{    
+  field(DESC,    "Log entry 6 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St06-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S07IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S07IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "7")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S07-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S07-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St07-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St07-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S07-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St07-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St07-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St07-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St07-I")
+{    
+  field(DESC,    "Log entry 7 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St07-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S08IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S08IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "8")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S08-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S08-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St08-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St08-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S08-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St08-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St08-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St08-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St08-I")
+{    
+  field(DESC,    "Log entry 8 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St08-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S09IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S09IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "9")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S09-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S09-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St09-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St09-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S09-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St09-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St09-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St09-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St09-I")
+{    
+  field(DESC,    "Log entry 9 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St09-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S10IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S10IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "10")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S10-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S10-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St10-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St10-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S10-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St10-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St10-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St10-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St10-I")
+{    
+  field(DESC,    "Log entry 10 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St10-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S11IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S11IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "11")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S11-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S11-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St11-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St11-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S11-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St11-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St11-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St11-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St11-I")
+{    
+  field(DESC,    "Log entry 11 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St11-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S12IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S12IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "12")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S12-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S12-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St12-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St12-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S12-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St12-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St12-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St12-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St12-I")
+{    
+  field(DESC,    "Log entry 12 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St12-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S13IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S13IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "13")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S13-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S13-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St13-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St13-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S13-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St13-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St13-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St13-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St13-I")
+{    
+  field(DESC,    "Log entry 13 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St13-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S14IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S14IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "14")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S14-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S14-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St14-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St14-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S14-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St14-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St14-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St14-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St14-I")
+{    
+  field(DESC,    "Log entry 14 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St14-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S15IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S15IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "15")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S15-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S15-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St15-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St15-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S15-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St15-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St15-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St15-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St15-I")
+{    
+  field(DESC,    "Log entry 15 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St15-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S16IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S16IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "16")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S16-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S16-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St16-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St16-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S16-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St16-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St16-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St16-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St16-I")
+{    
+  field(DESC,    "Log entry 16 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St16-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S17IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S17IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "17")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S17-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S17-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St17-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St17-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S17-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St17-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St17-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St17-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St17-I")
+{    
+  field(DESC,    "Log entry 17 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St17-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S18IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S18IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "18")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S18-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S18-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St18-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St18-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S18-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St18-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St18-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St18-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St18-I")
+{    
+  field(DESC,    "Log entry 18 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St18-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S19IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S19IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "19")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S19-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S19-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St19-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St19-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S19-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St19-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St19-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St19-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St19-I")
+{    
+  field(DESC,    "Log entry 19 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St19-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S20IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S20IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "20")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S20-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S20-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St20-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St20-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S20-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St20-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St20-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St20-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St20-I")
+{    
+  field(DESC,    "Log entry 20 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St20-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S21IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S21IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "21")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S21-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S21-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St21-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St21-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S21-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St21-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St21-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St21-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St21-I")
+{    
+  field(DESC,    "Log entry 21 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St21-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S22IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S22IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "22")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S22-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S22-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St22-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St22-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S22-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St22-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St22-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St22-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St22-I")
+{    
+  field(DESC,    "Log entry 22 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St22-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S23IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S23IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "23")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S23-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S23-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St23-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St23-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S23-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St23-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St23-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St23-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St23-I")
+{    
+  field(DESC,    "Log entry 23 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St23-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S24IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S24IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "24")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S24-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S24-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St24-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St24-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S24-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St24-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St24-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St24-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St24-I")
+{    
+  field(DESC,    "Log entry 24 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St24-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S25IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S25IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "25")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S25-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S25-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St25-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St25-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S25-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St25-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St25-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St25-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St25-I")
+{    
+  field(DESC,    "Log entry 25 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St25-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S26IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S26IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "26")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S26-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S26-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St26-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St26-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S26-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St26-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St26-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St26-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St26-I")
+{    
+  field(DESC,    "Log entry 26 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St26-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S27IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S27IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "27")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S27-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S27-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St27-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St27-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S27-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St27-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St27-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St27-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St27-I")
+{    
+  field(DESC,    "Log entry 27 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St27-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S28IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S28IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "28")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S28-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S28-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St28-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St28-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S28-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St28-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St28-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St28-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St28-I")
+{    
+  field(DESC,    "Log entry 28 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St28-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S29IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S29IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "29")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S29-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S29-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St29-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St29-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S29-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St29-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St29-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St29-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St29-I")
+{    
+  field(DESC,    "Log entry 29 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St29-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S30IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S30IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "30")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S30-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S30-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St30-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St30-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S30-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St30-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St30-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St30-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St30-I")
+{    
+  field(DESC,    "Log entry 30 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St30-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S31IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S31IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "31")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S31-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S31-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St31-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St31-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S31-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St31-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St31-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St31-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St31-I")
+{    
+  field(DESC,    "Log entry 31 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St31-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S32IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S32IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "32")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S32-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S32-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St32-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St32-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S32-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St32-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St32-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St32-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St32-I")
+{    
+  field(DESC,    "Log entry 32 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St32-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S33IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S33IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "33")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S33-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S33-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St33-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St33-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S33-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St33-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St33-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St33-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St33-I")
+{    
+  field(DESC,    "Log entry 33 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St33-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S34IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S34IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "34")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S34-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S34-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St34-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St34-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S34-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St34-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St34-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St34-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St34-I")
+{    
+  field(DESC,    "Log entry 34 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St34-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S35IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S35IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "35")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S35-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S35-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St35-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St35-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S35-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St35-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St35-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St35-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St35-I")
+{    
+  field(DESC,    "Log entry 35 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St35-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S36IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S36IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "36")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S36-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S36-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St36-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St36-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S36-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St36-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St36-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St36-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St36-I")
+{    
+  field(DESC,    "Log entry 36 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St36-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S37IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S37IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "37")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S37-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S37-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St37-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St37-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S37-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St37-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St37-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St37-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St37-I")
+{    
+  field(DESC,    "Log entry 37 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St37-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S38IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S38IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "38")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S38-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S38-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St38-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St38-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S38-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St38-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St38-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St38-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St38-I")
+{    
+  field(DESC,    "Log entry 38 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St38-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S39IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S39IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "39")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S39-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S39-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St39-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St39-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S39-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St39-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St39-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St39-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St39-I")
+{    
+  field(DESC,    "Log entry 39 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St39-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S40IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S40IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "40")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S40-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S40-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St40-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St40-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S40-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St40-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St40-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St40-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St40-I")
+{    
+  field(DESC,    "Log entry 40 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St40-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S41IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S41IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "41")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S41-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S41-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St41-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St41-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S41-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St41-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St41-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St41-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St41-I")
+{    
+  field(DESC,    "Log entry 41 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St41-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S42IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S42IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "42")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S42-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S42-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St42-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St42-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S42-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St42-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St42-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St42-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St42-I")
+{    
+  field(DESC,    "Log entry 42 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St42-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S43IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S43IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "43")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S43-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S43-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St43-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St43-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S43-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St43-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St43-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St43-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St43-I")
+{    
+  field(DESC,    "Log entry 43 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St43-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S44IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S44IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "44")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S44-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S44-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St44-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St44-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S44-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St44-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St44-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St44-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St44-I")
+{    
+  field(DESC,    "Log entry 44 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St44-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S45IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S45IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "45")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S45-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S45-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St45-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St45-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S45-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St45-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St45-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St45-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St45-I")
+{    
+  field(DESC,    "Log entry 45 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St45-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S46IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S46IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "46")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S46-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S46-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St46-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St46-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S46-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St46-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St46-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St46-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St46-I")
+{    
+  field(DESC,    "Log entry 46 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St46-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S47IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S47IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "47")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S47-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S47-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St47-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St47-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S47-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St47-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St47-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St47-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St47-I")
+{    
+  field(DESC,    "Log entry 47 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St47-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S48IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S48IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "48")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S48-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S48-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St48-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St48-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S48-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St48-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St48-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St48-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St48-I")
+{    
+  field(DESC,    "Log entry 48 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St48-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:S49IX-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:S49IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "49")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:S49-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:S49-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:Typ-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St49-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)}ID:St49-Calc") {
+  field(DESC,    "Calc. INDX field for State TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)}ID:S49-SubA" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)}ID:St49-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}ID:St49-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Evt-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:St49-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)}ID:St49-I")
+{    
+  field(DESC,    "Log entry 49 text:")
+  field(INP,     "$(SYS1){$(DEV1)}ID:St49-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)}ID:W00IX-Calc")
+}
+

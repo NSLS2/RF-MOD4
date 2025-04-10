@@ -1,0 +1,1050 @@
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID00IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "0")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID00-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID00-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID00-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID00-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID00-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID01IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID01IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "1")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID01-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID01-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID01-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID01-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID01-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID02IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID02IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "2")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID02-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID02-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID02-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID02-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID02-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID03IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID03IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "3")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID03-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID03-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID03-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID03-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID03-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID04IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID04IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "4")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID04-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID04-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID04-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID04-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID04-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID05IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID05IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "5")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID05-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID05-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID05-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID05-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID05-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID06IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID06IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "6")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID06-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID06-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID06-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID06-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID06-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID07IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID07IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "7")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID07-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID07-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID07-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID07-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID07-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID08IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID08IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "8")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID08-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID08-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID08-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID08-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID08-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID09IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID09IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "9")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID09-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID09-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID09-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID09-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID09-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID10IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID10IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "10")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID10-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID10-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID10-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID10-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID10-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID11IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID11IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "11")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID11-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID11-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID11-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID11-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID11-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID12IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID12IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "12")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID12-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID12-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID12-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID12-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID12-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID13IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID13IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "13")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID13-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID13-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID13-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID13-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID13-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID14IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID14IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "14")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID14-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID14-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID14-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID14-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID14-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID15IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID15IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "15")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID15-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID15-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID15-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID15-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID15-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID16IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID16IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "16")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID16-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID16-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID16-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID16-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID16-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID17IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID17IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "17")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID17-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID17-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID17-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID17-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID17-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID18IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID18IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "18")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID18-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID18-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID18-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID18-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID18-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID19IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID19IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "19")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID19-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID19-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID19-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID19-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID19-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID20IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID20IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "20")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID20-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID20-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID20-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID20-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID20-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID21IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID21IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "21")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID21-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID21-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID21-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID21-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID21-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID22IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID22IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "22")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID22-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID22-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID22-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID22-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID22-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID23IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID23IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "23")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID23-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID23-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID23-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID23-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID23-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID24IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID24IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "24")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID24-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID24-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID24-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID24-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID24-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID25IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID25IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "25")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID25-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID25-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID25-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID25-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID25-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID26IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID26IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "26")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID26-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID26-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID26-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID26-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID26-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID27IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID27IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "27")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID27-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID27-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID27-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID27-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID27-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID28IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID28IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "28")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID28-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID28-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID28-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID28-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID28-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID29IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID29IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "29")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID29-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID29-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID29-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID29-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID29-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID30IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID30IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "30")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID30-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID30-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID30-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID30-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID30-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID31IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID31IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "31")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID31-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID31-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID31-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID31-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID31-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID32IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID32IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "32")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID32-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID32-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID32-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID32-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID32-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID33IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID33IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "33")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID33-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID33-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID33-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID33-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID33-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID34IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID34IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "34")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID34-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID34-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID34-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID34-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID34-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID35IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID35IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "35")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID35-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID35-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID35-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID35-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID35-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID36IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID36IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "36")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID36-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID36-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID36-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID36-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID36-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID37IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID37IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "37")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID37-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID37-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID37-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID37-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID37-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID38IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID38IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "38")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID38-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID38-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID38-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID38-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID38-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID39IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID39IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "39")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID39-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID39-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID39-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID39-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID39-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID40IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID40IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "40")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID40-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID40-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID40-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID40-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID40-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID41IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID41IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "41")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID41-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID41-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID41-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID41-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID41-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID42IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID42IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "42")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID42-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID42-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID42-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID42-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID42-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID43IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID43IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "43")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID43-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID43-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID43-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID43-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID43-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID44IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID44IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "44")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID44-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID44-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID44-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID44-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID44-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID45IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID45IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "45")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID45-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID45-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID45-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID45-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID45-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID46IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID46IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "46")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID46-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID46-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID46-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID46-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID46-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID47IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID47IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "47")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID47-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID47-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID47-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID47-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID47-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID48IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID48IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "48")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID48-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID48-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID48-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID48-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID48-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID49IX-Calc")
+}
+record(calcout,  "$(SYS1){$(DEV1)}Evt:TgID49IX-Calc") {
+  field(DESC,    "Calc INDX relative to g_uiEventsIndex")
+  field(INPA,    "$(SYS1){$(DEV1)}Evt:LogIX-I" )
+  field(INPB,    "49")
+  field(INPC,    "50")
+  field(CALC,    "((A-B)<0)?A-B+C:A-B")
+  field(OUT,     "$(SYS1){$(DEV1)}Evt:TgID49-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)}Evt:TgID49-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TrigID-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "50") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID49-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)}Evt:TgID49-I") {    
+  field(INP,     "$(SYS1){$(DEV1)}Evt:TgID49-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)}Evt:TgID50IX-Calc")
+}

@@ -1,0 +1,80 @@
+###################################################################
+# 1. Accumulated hours CALC
+
+record(calcout,  "$(SYS1){$(DEV1)$(DEV2)}Time:10s-Calc") {
+  field(DESC,    "Sum of 10 s:")
+  field(SCAN,    "10 second")
+  field(CALC,    "(A>B)&&(A<E)?C+D:C")
+  field(INPA,    "$(SYS1){$(DEV1)$(SUBDEV)}$(A)")
+# Standby state = 5
+# HV state = 9
+# Trig state = 13
+  field(INPB,    "$(B)")
+  field(INPC,    "$(SYS1){$(DEV1)$(DEV2)}Time:10s")
+  field(INPD,    "10")
+  field(INPE,    "$(E)")
+  field(OUT,     "$(SYS1){$(DEV1)$(DEV2)}Time:10s PP")
+}
+#
+# The accumulated value depends on autosaved sum
+#
+record(ao,       "$(SYS1){$(DEV1)$(DEV2)}Time:10s") {
+  field(DESC,    "Sum of 10 seconds:")
+  field(EGU,     "s")
+  field(FLNK,    "$(SYS1){$(DEV1)$(DEV2)}Time:On-Calc")
+info(autosaveFields_pass0, "VAL")
+}
+
+record(calcout, "$(SYS1){$(DEV1)$(DEV2)}Time:On-Calc") {
+  field(CALC,   "(FLOOR(A)>0)?FLOOR(A):0")
+  field(INPA,   "$(SYS1){$(DEV1)$(DEV2)}Time:10s")
+  field(OUT,    "$(SYS1){$(DEV1)$(DEV2)}Time:ONsec PP")
+}
+
+record(ai,      "$(SYS1){$(DEV1)$(DEV2)}Time:ONsec") {
+  field(EGU,    "s")
+  field(FLNK,   "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin-Calc")
+}
+
+record(calcout, "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin-Calc") {
+  field(CALC,   "FLOOR(A/B)")
+  field(INPA,   "$(SYS1){$(DEV1)$(DEV2)}Time:ONsec")
+  field(INPB,   "60")
+  field(OUT,    "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin PP")
+}
+
+record(ai,      "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin") {
+  field(EGU,    "min")
+  field(FLNK,   "$(SYS1){$(DEV1)$(DEV2)}Time:OnHrs-Calc")
+}
+
+record(calcout, "$(SYS1){$(DEV1)$(DEV2)}Time:OnHrs-Calc") {
+  field(CALC,   "FLOOR(A/B)")
+  field(INPA,   "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin")
+  field(INPB,   "60")
+  field(OUT,    "$(SYS1){$(DEV1)$(DEV2)}Time:OnHrs PP")
+}
+
+record(ai,      "$(SYS1){$(DEV1)$(DEV2)}Time:OnHrs") {
+  field(EGU,    "h")
+  field(FLNK,   "$(SYS1){$(DEV1)$(DEV2)}Time:Onhrs-Calc")
+}
+
+record(calcout, "$(SYS1){$(DEV1)$(DEV2)}Time:Onhrs-Calc") {
+  field(CALC,   "A+(B-A*C)/C")
+  field(INPA,   "$(SYS1){$(DEV1)$(DEV2)}Time:OnHrs")
+  field(INPB,   "$(SYS1){$(DEV1)$(DEV2)}Time:ONmin")
+  field(INPC,   "60")
+  field(OUT,    "$(SYS1){$(DEV1)$(DEV2)}Time:On PP")
+}
+
+record(ai,      "$(SYS1){$(DEV1)$(DEV2)}Time:On") {
+  field(DESC,   "Accumulated $(DESC) hours:")
+  field(EGU,    "h")
+  field(PREC,   "3")
+}
+# Accumulated hours calculator
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#=============================================================
+
+

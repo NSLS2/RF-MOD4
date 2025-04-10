@@ -1,0 +1,328 @@
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:Inc-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "USHORT")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "0")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:Inc-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Val:Inc-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Val:Inc-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:St-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:St-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "USHORT")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:St-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Val:St-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Val:St-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:St-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-MIL}ID:St-Calc") {
+  field(DESC,    "Calcuate INDX field for state")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Val:St-I")
+# field(INPB,    "-1")
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)-MIL}ID:St-SubA.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}ID:St-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Ilktyp-Wf")    
+  field(FTVL,    "STRING")
+  field(MALM,    "300") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:St-I")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-MIL}ID:St-I")
+{    
+  field(DESC,    "Main event type:")
+  field(INP,     "$(SYS1){$(DEV1)-MIL}ID:St-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Time:TS1-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Time:TS1-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "8") 
+  field(NELM,    "1")
+  field(INDX,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Time:TS1-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Time:TS1-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Time:TS1-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Time:TS2-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Time:TS2-SubA") {    
+  field(INP,     "$(SYS1){$(DEV1)}Time:MIL-Wf")
+  field(FTVL,    "ULONG")
+  field(MALM,    "8")
+  field(NELM,    "1")
+  field(INDX,    "2")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Time:TS2-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Time:TS2-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Time:TS2-SubA")    
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Time:TScv-Calc")
+}
+
+record(aSub,     "$(SYS1){$(DEV1)-MIL}Time:TScv-Calc")
+{
+  field(DESC,    "Convert FILETIME to EPICS str")
+  field(INAM,    "scandiTsubInit")
+  field(SNAM,    "scandiTsubProcess")
+  field(FTA,     "ULONG")
+  field(NOA,     "1")
+  field(FTB,     "ULONG")
+  field(NOB,     "1")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Time:TS1-I")
+  field(INPB,    "$(SYS1){$(DEV1)-MIL}Time:TS2-I")
+  field(OUTA,    "$(SYS1){$(DEV1)-MIL}Time:TS PP")
+  field(NOVA,    "39")
+  field(FTVA,    "STRING")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-MIL}Time:TS") {
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Evt:IX-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Evt:IX-SubA") {
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "USHORT")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "8")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Evt:IX-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Evt:IX-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Evt:IX-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:IL-Calc_")
+}
+
+#--------------------------------------------------------
+record(calcout,  "$(SYS1){$(DEV1)-MIL}ID:IL-Calc_") {
+  field(DESC,    "Calc. INDX field for IL TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Evt:IX-I" )
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)-MIL}ID:IL-SubA_.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}ID:IL-SubA_") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Ssm-Wf")    
+  field(FTVL,    "STRING")
+#
+# Can be either ID:Logtxt-Wf 
+# or SSM_list.txt (if Evt Type = Interlock!
+#
+  field(MALM,    "256") 
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:IL-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-MIL}ID:IL-I_")
+{    
+  field(DESC,    "MEV IL text:")
+  field(INP,     "$(SYS1){$(DEV1)-MIL}ID:IL-SubA_")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Cnt:TIX-SubA")
+}
+#--------------------------------------------------------
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Cnt:TIX-SubA") {
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "USHORT")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "9")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Cnt:TIX-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Cnt:TIX-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Cnt:TIX-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:T-Calc_")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-MIL}ID:T-Calc_") {
+  field(DESC,    "Calcuate INDX field for TEXT")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Cnt:TIX-I")
+  field(INPB,    "0")
+  field(CALC,    "A+B")
+  field(OUT,     "$(SYS1){$(DEV1)-MIL}ID:T-SubA_.INDX PP")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}ID:T-SubA_") {    
+  field(INP,     "$(SYS1){$(DEV1)}ID:Wrntxt-Wf") 
+  field(FTVL,    "STRING")
+  field(MALM,    "256")
+  field(NELM,    "1")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:T-I_")
+}
+
+record(stringin, "$(SYS1){$(DEV1)-MIL}ID:T-I_")
+{    
+  field(DESC,    "MEV subtext:")
+  field(INP,     "$(SYS1){$(DEV1)-MIL}ID:T-SubA_")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}ID:T-Calc")
+}
+
+record(scalcout,  "$(SYS1){$(DEV1)-MIL}ID:T-Calc") {
+# Calculate text for selecting for State
+# of Interlock (Matrixitem)
+  field(DESC,     "STATE or IL text:")
+# Interlock state = 2
+  field(CALC,     "A==2?BB:AA")
+  field(INPA,     "$(SYS1){$(DEV1)-MIL}Val:St-I")
+  field(INAA,     "$(SYS1){$(DEV1)-MIL}ID:T-I_")
+  field(INBB,     "$(SYS1){$(DEV1)-MIL}ID:IL-I_")
+  field(OUT,      "$(SYS1){$(DEV1)-MIL}ID:T-I PP")
+}
+
+record(stringout, "$(SYS1){$(DEV1)-MIL}ID:T-I") {
+  field(FLNK,     "$(SYS1){$(DEV1)-MIL}Val:04-SubA")
+}
+
+#========================================================
+# Extract the remaining part if MEV for examination & data
+#
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:04-SubA") {
+  field(DESC,    "INDX[04]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "4")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:05-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:05-SubA") {
+  field(DESC,    "INDX[05]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "5")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:06-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:06-SubA") {
+  field(DESC,    "INDX[06]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "6")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:07-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:07-SubA") {
+  field(DESC,    "INDX[07]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "7")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:08-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:08-SubA") {
+  field(DESC,    "INDX[08]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "8")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:09-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:09-SubA") {
+  field(DESC,    "INDX[09]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "9")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:09-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Val:09-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Val:09-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:10-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:10-SubA") {
+  field(DESC,    "INDX[10]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "10")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:10-I")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Val:10-I") {    
+  field(INP,     "$(SYS1){$(DEV1)-MIL}Val:10-SubA")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:11-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:11-SubA") {
+  field(DESC,    "INDX[11]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "11")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:12-SubA")
+}
+
+record(subArray, "$(SYS1){$(DEV1)-MIL}Val:12-SubA") {
+  field(DESC,    "INDX[12]:")
+  field(INP,     "$(SYS1){$(DEV1)}Val:MIL-Wf")    
+  field(FTVL,    "ULONG")
+  field(MALM,    "13") 
+  field(NELM,    "1")
+  field(INDX,    "12")
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:Int-Calc")
+}
+
+record(calcout,  "$(SYS1){$(DEV1)-MIL}Val:Int-Calc") {
+  field(CALC,    "((A<<16)&(C<<16))|(B&C)")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Val:12-SubA")
+  field(INPB,    "$(SYS1){$(DEV1)-MIL}Val:11-SubA")
+  field(INPC,    "65535")
+  field(OUT,     "$(SYS1){$(DEV1)-MIL}Val:Int-I PP")
+}
+
+record(longin,   "$(SYS1){$(DEV1)-MIL}Val:Int-I") {
+  field(FLNK,    "$(SYS1){$(DEV1)-MIL}Val:ifl-aSub") 
+}
+
+record(aSub,     "$(SYS1){$(DEV1)-MIL}Val:ifl-aSub") {
+  field(SNAM,    "intfloatSubProc")
+  field(FTA ,    "ULONG")
+  field(INPA,    "$(SYS1){$(DEV1)-MIL}Val:Int-I")
+  field(FTVA ,   "DOUBLE")
+  field(OUTA,    "$(SYS1){$(DEV1)-MIL}Val:Flt-I PP")
+}
+
+record(ai,       "$(SYS1){$(DEV1)-MIL}Val:Flt-I") {
+}
+#
+# Long waveform for storing information as text string
+#
+record(waveform, "$(SYS1){$(DEV1)-MIL}ID:MIL-I") {   
+  field(FTVL,    "CHAR")
+  field(NELM,    "4096")
+}
