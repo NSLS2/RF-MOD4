@@ -1,6 +1,6 @@
 NAME=RF-MOD4
 
-PORT=4054
+PORT=4065
 
 USER=softioc
 
