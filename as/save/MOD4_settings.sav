@@ -1,4 +1,4 @@
-# autosave R5.3	Automatically generated - DO NOT MODIFY - 250312-111706
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 250522-111057
 RF-CT{iocMod4}:CA_CLNT_CNT.HOPR 200
 RF-CT{iocMod4}:CA_CLNT_CNT.LOPR 0
 RF-CT{iocMod4}:CA_CLNT_CNT.HIHI 175
@@ -69,7 +69,7 @@ RF-CT{iocMod4}:FD_FREE.LOW 20
 RF-CT{iocMod4}:FD_FREE.LOLO 5
 RF-CT{iocMod4}:FD_FREE.LSV 1
 RF-CT{iocMod4}:FD_FREE.LLSV 2
-RF-CT{iocMod4}:START_CNT.VAL 18
+RF-CT{iocMod4}:START_CNT.VAL 22
 LN-RF{Mod:4-Dig}Cnt:Wf-SP.VAL 10
 LN-RF{Mod:4}State-Sel.VAL 0
 <END>
