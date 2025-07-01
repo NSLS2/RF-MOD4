@@ -1,6 +1,6 @@
 NAME=RF-MOD4
 
-PORT=4065
+PORT=4109
 
 USER=softioc
 
